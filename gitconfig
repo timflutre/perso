@@ -1,0 +1,12 @@
+[user]
+	name = Timothée Flutre
+	email = timflutre@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	editor = emacs
+[i18n]
+	commitEncoding = utf8
+	logOutputEncoding = utf8
