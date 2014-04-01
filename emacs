@@ -35,8 +35,8 @@
 
 ;; START config ESS
 (require 'ess-site)
-(add-to-list 'load-path "~/src_ext/ess/ess-13.09-1/lisp/")
-(load "ess-site")
+;; (add-to-list 'load-path "~/src_ext/ess/ess-13.09-1/lisp/")
+;; (load "ess-site")
 
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
@@ -57,9 +57,9 @@
 ;;----------------------------------------------------------------------------
 
 ;; START config AUCTeX
-;;(load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/auctex.el" nil t t)
-;;(load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/preview-latex.el" nil t t)
-;;(add-to-list 'load-path "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX")
+;; (load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/auctex.el" nil t t)
+;; (load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/preview-latex.el" nil t t)
+;; (add-to-list 'load-path "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX")
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
@@ -70,8 +70,8 @@
 ;;----------------------------------------------------------------------------
 
 ;; START config org-mode
-(setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/lisp" load-path))
-(setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/contrib/lisp" load-path))
+;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/lisp" load-path))
+;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/contrib/lisp" load-path))
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
