@@ -9,7 +9,6 @@ export CFLAGS="$CFLAGS -I$HOME/include"
 export CPPFLAGS="$CPPFLAGS -I$HOME/include"
 export CXXFLAGS="$CXXFLAGS -I$HOME/include"
 export LDFLAGS="$LDFLAGS -L$HOME/lib"
-
 export MANPATH=$HOME/share/man:$MANPATH
 
 export R_LIBS_USER=$HOME/src_ext/Rlibs
@@ -20,7 +19,13 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# grant read permission to group members
-if [ "$HOSTNAME" == "marmadais" ]; then
+# Machine specific environment
+export CLUSTERNAME="to_be_filled"
+if [ "$CLUSTERNAME" == "southgreen" ]; then
+    # grant read permission to group members
     umask u=rwx,g=rx,o=
+fi
+if [ "$CLUSTERNAME" == "urgi" ]; then
+    # http://stackoverflow.com/a/4454754/597069
+    export GIT_SSL_NO_VERIFY=true
 fi
