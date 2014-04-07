@@ -10,6 +10,8 @@ export CPPFLAGS="$CPPFLAGS -I$HOME/include"
 export CXXFLAGS="$CXXFLAGS -I$HOME/include"
 export LDFLAGS="$LDFLAGS -L$HOME/lib"
 
+export MANPATH=$HOME/share/man:$MANPATH
+
 export R_LIBS_USER=$HOME/src_ext/Rlibs
 export PYTHONPATH=$HOME/lib/python/:$PYTHONPATH
 
