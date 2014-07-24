@@ -22,6 +22,10 @@ export LANGUAGE=en_US.UTF-8
 # Machine specific environment
 export CLUSTERNAME="to_be_filled"
 if [ "$CLUSTERNAME" == "southgreen" ]; then
+    # load env for R-3.1.0 compiled with gcc 4.8.2
+    . /etc/profile.d/modules.sh
+    module load compiler/gcc-4.8.2
+    
     # grant read permission to group members
     umask u=rwx,g=rx,o=
 fi
