@@ -6,16 +6,38 @@
  '(display-time-24hr-format t) ;; in the mode line
  '(case-fold-search t)
  '(current-language-environment "UTF-8")
- '(default-input-method "rfc1345")
  '(global-font-lock-mode t nil (font-lock))
- '(show-paren-mode t)
 )
 
-(setq inhibit-startup-message t)
-
+;; http://www.emacswiki.org/emacs/LoadPath
+;; http://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/")
 
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+
+;; http://www.emacswiki.org/emacs/ShowParenMode
+(setq show-paren-delay 0)
+(setq show-paren-mode 1)
+
+ ;; http://stackoverflow.com/a/64558/597069
+(setq x-select-enable-clipboard t)
+
+;; http://stackoverflow.com/a/14659015/597069
+(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.3/")
+(require 'xclip)
+(xclip-mode 1)
+
 (setq latex-run-command "pdflatex")
+
+;; http://www.emacswiki.org/emacs/AutoCompressionMode
+(auto-compression-mode 1)
+
+;; http://www.emacswiki.org/emacs/DiaryMode
+(setq european-calendar-style t)
+
+;; http://www.emacswiki.org/emacs/InputMethods
+(setq default-input-method "Tex")
 
 ;; config for C/C++ code
 (setq c-default-style "bsd"
@@ -26,6 +48,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; START config Auto-Complete
+;; http://cx4a.org/software/auto-complete/
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
@@ -34,6 +57,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; START config ESS
+;; http://ess.r-project.org/
 (require 'ess-site)
 ;; (add-to-list 'load-path "~/src_ext/ess/ess-13.09-1/lisp/")
 ;; (load "ess-site")
@@ -53,10 +77,13 @@
 ;;      (setq comint-buffer-maximum-size 0)
 ;;      (comint-truncate-buffer)
 ;;      (setq comint-buffer-maximum-size old-max)))
+;; END config ESS
 
 ;;----------------------------------------------------------------------------
 
 ;; START config AUCTeX
+;; http://www.gnu.org/software/auctex/
+;; http://www.emacswiki.org/emacs/AUCTeX
 ;; (load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/auctex.el" nil t t)
 ;; (load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/preview-latex.el" nil t t)
 ;; (add-to-list 'load-path "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX")
@@ -64,12 +91,13 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (setq TeX-save-query nil)
-(setq TeX-PDF-mode t) ;; to have a pdf output for all LaTeX documents
+(setq TeX-PDF-mode t) ;; http://superuser.com/a/452409
 ;; END config AUCTeX
 
 ;;----------------------------------------------------------------------------
 
 ;; START config org-mode
+;; http://orgmode.org/
 ;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/lisp" load-path))
 ;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/contrib/lisp" load-path))
 (require 'org-install)
@@ -99,6 +127,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; START config python-mode
+;; http://www.emacswiki.org/emacs/PythonProgrammingInEmacs
 (setq
  python-shell-interpreter "ipython"
  python-shell-interpreter-args ""
