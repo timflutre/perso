@@ -18,7 +18,7 @@
 
 ;; http://www.emacswiki.org/emacs/ShowParenMode
 (setq show-paren-delay 0)
-(setq show-paren-mode 1)
+(show-paren-mode 1)
 
  ;; http://stackoverflow.com/a/64558/597069
 (setq x-select-enable-clipboard t)
