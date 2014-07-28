@@ -45,6 +45,14 @@
           tab-width 2
           indent-tabs-mode t)
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+
 ;;----------------------------------------------------------------------------
 
 ;; START config Auto-Complete
@@ -77,7 +85,6 @@
 ;;      (setq comint-buffer-maximum-size 0)
 ;;      (comint-truncate-buffer)
 ;;      (setq comint-buffer-maximum-size old-max)))
-;; END config ESS
 
 ;;----------------------------------------------------------------------------
 
@@ -140,3 +147,11 @@
  python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 ;; END config python-mode
+
+;;----------------------------------------------------------------------------
+
+;; START config polymode
+(add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+(add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+;; END config polymode
