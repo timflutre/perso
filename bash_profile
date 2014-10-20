@@ -26,8 +26,8 @@ if [ "$CLUSTERNAME" == "southgreen" ]; then
     . /etc/profile.d/modules.sh
     module load compiler/gcc-4.8.2
     
-    # grant read permission to group members
-    umask u=rwx,g=rx,o=
+    # grant no permission to anyone except me
+    umask u=rwx,g=,o=
     
     # http://stackoverflow.com/a/4454754/597069
     export GIT_SSL_NO_VERIFY=true
