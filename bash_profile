@@ -38,3 +38,19 @@ if [ "$CLUSTERNAME" == "urgi" ]; then
     # http://stackoverflow.com/a/4454754/597069
     export GIT_SSL_NO_VERIFY=true
 fi
+if [ "$CLUSTERNAME" == "midway" ]; then
+    module load gcc
+    module load R/3.0
+    module load git
+    module load coreutils
+    module load texinfo
+    module load texlive
+    module load autoconf
+    module load automake
+    module load libtool
+    module load zlib
+    module load gsl
+    module load python
+    module load parallel
+    export PATH=$HOME/bin:$PATH
+fi
