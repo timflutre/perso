@@ -39,11 +39,14 @@
 ;; http://www.emacswiki.org/emacs/InputMethods
 (setq default-input-method "Tex")
 
-;; config for C/C++ code
+;; config for code
+;; http://www.emacswiki.org/emacs/NoTabs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 (setq c-default-style "bsd"
-          c-basic-offset 2
-          tab-width 2
-          indent-tabs-mode t)
+      c-basic-offset 2
+      tab-width 2
+      indent-tabs-mode t)
 
 (require 'package)
 (add-to-list 'package-archives
@@ -73,6 +76,26 @@
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
 (setq ess-ask-for-ess-directory nil) ;otherwise you are prompted each time you start an interactive R session
+
+;; http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards
+(add-hook 'ess-mode-hook
+  (lambda ()
+    (ess-set-style 'GNU 'quiet)
+    ;; Because
+    ;;                                 DEF GNU BSD K&R C++
+    ;; ess-indent-level                  2   2   8   5   4
+    ;; ess-continued-statement-offset    2   2   8   5   4
+    ;; ess-brace-offset                  0   0  -8  -5  -4
+    ;; ess-arg-function-offset           2   4   0   0   0
+    ;; ess-expression-offset             4   2   8   5   4
+    ;; ess-else-offset                   0   0   0   0   0
+    ;; ess-close-brace-offset            0   0   0   0   0
+    (add-hook 'local-write-file-hooks
+      (lambda ()
+        (ess-nuke-trailing-whitespace)))))
+(setq ess-nuke-trailing-whitespace-p 'ask)
+;; or even
+;; (setq ess-nuke-trailing-whitespace-p t)
 
 ;; tips source: http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
