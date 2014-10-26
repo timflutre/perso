@@ -126,12 +126,10 @@
 
 ;;----------------------------------------------------------------------------
 
-;; START config org-mode
+;; START config org-mode (version >= 8)
 ;; http://orgmode.org/
 ;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/lisp" load-path))
 ;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/contrib/lisp" load-path))
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
@@ -143,11 +141,16 @@
    (python . t)
    ))
 (setq org-confirm-babel-evaluate nil)
-(require 'org-latex)
-(add-to-list 'org-export-latex-packages-alist '("" "listings"))
-(setq org-export-latex-listings t)
-(setq org-export-latex-listings-options
-      '(("breaklines")))
+
+;; http://tex.stackexchange.com/a/115081/11434
+(add-to-list 'org-latex-packages-alist '("" "lmodern"))
+
+(add-to-list 'org-latex-packages-alist '("" "listings"))
+(setq org-latex-listings t)
+(setq org-latex-listings-options
+      '(("breaklines" "true")
+        ("basicstyle" "\\ttfamily") ;looks like verbatim
+        ("columns" "fullflexible"))) ;avoid adding spaces
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
 (setq org-agenda-files (list "~/org/work.org"
