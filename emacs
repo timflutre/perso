@@ -128,8 +128,6 @@
 
 ;; START config org-mode (version >= 8)
 ;; http://orgmode.org/
-;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/lisp" load-path))
-;; (setq load-path (cons "/home/tflutre/src_ext/ORG-MODE/org-7.8.03/contrib/lisp" load-path))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
@@ -142,15 +140,46 @@
    ))
 (setq org-confirm-babel-evaluate nil)
 
+;; http://orgmode.org/worg/org-contrib/babel/examples/fontify-src-code-blocks.html
+(setq org-src-fontify-natively t)
+
+;; http://stackoverflow.com/a/19319921/597069
+(setq org-src-tab-acts-natively t)
+
+;; http://stackoverflow.com/a/9768225/597069
+(setq org-src-preserve-indentation t)
+
+;; http://raebear.net/comp/emacscolors.html
+(custom-set-faces '(org-level-1 ((t (:foreground "#191970")))))
+(custom-set-faces '(org-level-2 ((t (:foreground "#6495ed")))))
+(custom-set-faces '(org-level-3 ((t (:foreground "#191970")))))
+(custom-set-faces '(org-level-4 ((t (:foreground "#6495ed")))))
+(custom-set-faces '(org-level-5 ((t (:foreground "#191970")))))
+(custom-set-faces '(org-level-6 ((t (:foreground "#6495ed")))))
+(custom-set-faces '(org-level-7 ((t (:foreground "#191970")))))
+(custom-set-faces '(org-level-8 ((t (:foreground "#6495ed")))))
+
 ;; http://tex.stackexchange.com/a/115081/11434
 (add-to-list 'org-latex-packages-alist '("" "lmodern"))
 
+(add-to-list 'org-latex-packages-alist '("" "parskip"))
+(add-to-list 'org-latex-packages-alist '("" "underscore"))
+(add-to-list 'org-latex-packages-alist '("usenames,dvipsnames" "color"))
 (add-to-list 'org-latex-packages-alist '("" "listings"))
 (setq org-latex-listings t)
 (setq org-latex-listings-options
       '(("breaklines" "true")
+        ("showspaces" "false")
+        ("showtabs" "false")
+        ("tabsize" "2") ;instead of 8
         ("basicstyle" "\\ttfamily") ;looks like verbatim
+        ("frame" "single")
+;;        ("backgroundcolor" "\\color{Gray}") ;too dark
+        ("keywordstyle" "\\color{Blue}")
+        ("stringstyle" "\\color{BrickRed}")
+        ("commentstyle" "\\color{ForestGreen}")
         ("columns" "fullflexible"))) ;avoid adding spaces
+;; (add-to-list 'org-latex-packages-alist '("francais" "babel")) ;doesn't work with listings
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
 (setq org-agenda-files (list "~/org/work.org"
