@@ -170,6 +170,7 @@
 (setq org-latex-listings-options
       '(("breaklines" "true")
         ("showspaces" "false")
+        ("showstringspaces" "false")
         ("showtabs" "false")
         ("tabsize" "2") ;instead of 8
         ("basicstyle" "\\ttfamily") ;looks like verbatim
