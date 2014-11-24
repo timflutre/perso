@@ -97,6 +97,15 @@
 ;; or even
 ;; (setq ess-nuke-trailing-whitespace-p t)
 
+;; https://stat.ethz.ch/pipermail/ess-help/2013-June/009094.html
+;; https://stat.ethz.ch/pipermail/ess-help/2011-December/007342.html
+(setq ess-roxy-template-alist
+			(list (cons "description" "")
+						(cons "details" "")
+						(cons "param" "")
+						(cons "return" "")
+						(cons "author" "Timothée Flutre")))
+
 ;; tips source: http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
 ;; END config ESS
