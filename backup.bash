@@ -22,7 +22,7 @@ if [ "$HOSTNAME" == "tflutre-laptop" ]; then
     RSYNC="rsync"
     TARGET="/media/tflutre/tflutre-backup/backup_${HOSTNAME}/"
 elif [ "$HOSTNAME" == "agap-flutre" ]; then
-    RSYNC_ARGS_SPECIFIC="--exclude='backup-agap' --exclude='Bureau' --exclude='clusterpps' --exclude='Dropbox' --exclude='Public' --exclude='R' --exclude='Téléchargements' --exclude='tmp/' --exclude='Vidéos'"
+    RSYNC_ARGS_SPECIFIC="--exclude='backup-agap' --exclude='Bureau' --exclude='Calibre Library' --exclude='cluster-marmadais' --exclude='clusterpps' --exclude='Dropbox' --exclude='Public' --exclude='R' --exclude='Téléchargements' --exclude='tmp' --exclude='Vidéos'"
     if [ -d /media/tflutre/tflutre-backup/ ]; then
 	RSYNC="rsync"
 	TARGET="/media/tflutre/tflutre-backup/backup_${HOSTNAME}/"
