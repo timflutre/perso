@@ -47,6 +47,8 @@
       c-basic-offset 2
       tab-width 2
       indent-tabs-mode t)
+(setq sh-basic-offset 2
+      sh-indentation 2)
 
 (require 'package)
 (add-to-list 'package-archives
