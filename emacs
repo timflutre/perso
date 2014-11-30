@@ -16,6 +16,12 @@
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
 
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Display-Feature-Testing.html
+(if (display-graphic-p)
+    (menu-bar-mode 1)
+  (menu-bar-mode 0))
+
 ;; http://www.emacswiki.org/emacs/ShowParenMode
 (setq show-paren-delay 0)
 (show-paren-mode 1)
