@@ -219,6 +219,13 @@
    "';'.join(module_completion('''%s'''))\n"
  python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+
+;; http://stackoverflow.com/a/4251387/597069
+(add-hook 'python-mode-hook
+  (function (lambda ()
+    (setq indent-tabs-mode nil
+      tab-width 2))))
+
 ;; END config python-mode
 
 ;;----------------------------------------------------------------------------
