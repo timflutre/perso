@@ -186,13 +186,21 @@
 (setq org-latex-listings t)
 (setq org-latex-listings-options
       '(("breaklines" "true")
+				;; ("breakatwhitespace" "true") ;can lead to too-long lines
+				;; ("breakautoindent" "true")
+				("linewidth" "\\textwidth")
         ("showspaces" "false")
         ("showstringspaces" "false")
         ("showtabs" "false")
         ("tabsize" "2") ;instead of 8
         ("basicstyle" "\\ttfamily") ;looks like verbatim
-        ("frame" "single")
-;;        ("backgroundcolor" "\\color{Gray}") ;too dark
+        ;; ("numbers" "left") ;bad copy-paste for sh from pdf
+        ("numberstyle" "\\footnotesize")
+        ("stepnumber" "1")
+        ("numbersep" "5pt")
+				("captionpos" "b")
+        ;; ("frame" "single")
+        ("backgroundcolor" "\\color[RGB]{248,248,248}") ;light grey
         ("keywordstyle" "\\color{Blue}")
         ("stringstyle" "\\color{BrickRed}")
         ("commentstyle" "\\color{ForestGreen}")
