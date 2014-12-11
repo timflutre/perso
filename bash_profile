@@ -26,13 +26,10 @@ if [ "$CLUSTERNAME" == "southgreen" ]; then
     . /etc/profile.d/modules.sh
     module load compiler/gcc-4.8.2
     
-    # grant no permission to anyone except me
-    umask u=rwx,g=,o=
-    
     # http://stackoverflow.com/a/4454754/597069
     export GIT_SSL_NO_VERIFY=true
     
-    export PATH=/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:$PATH
+    export PATH=/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:/usr/local/bioinfo/fastx_toolkit_0.0.14/bin:$PATH
 fi
 if [ "$CLUSTERNAME" == "urgi" ]; then
     # http://stackoverflow.com/a/4454754/597069
