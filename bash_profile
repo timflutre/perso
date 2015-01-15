@@ -22,14 +22,13 @@ export LANGUAGE=en_US.UTF-8
 # Machine specific environment
 export CLUSTERNAME="to_be_filled"
 if [ "$CLUSTERNAME" == "southgreen" ]; then
-    # load env for R-3.1.0 compiled with gcc 4.8.2
     . /etc/profile.d/modules.sh
     module load compiler/gcc-4.8.2
     
     # http://stackoverflow.com/a/4454754/597069
     export GIT_SSL_NO_VERIFY=true
     
-    export PATH=/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:/usr/local/bioinfo/fastx_toolkit_0.0.14/bin:$PATH
+    export PATH=/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:/usr/local/bioinfo/fastx_toolkit_0.0.14/bin:/usr/local/bioinfo/stacks-1.23/bin/:$PATH
 fi
 if [ "$CLUSTERNAME" == "urgi" ]; then
     # http://stackoverflow.com/a/4454754/597069
