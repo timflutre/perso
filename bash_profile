@@ -21,7 +21,7 @@ export LANGUAGE=en_US.UTF-8
 
 # Machine specific environment
 export COMPUTERNAME="to_be_filled"
-if [ "$COMPUTERNAME" == "laptop-pro"]; then
+if [ "$COMPUTERNAME" == "laptop-pro" ]; then
     export PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
     export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
     export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
