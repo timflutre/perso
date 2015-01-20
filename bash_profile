@@ -20,8 +20,13 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 # Machine specific environment
-export CLUSTERNAME="to_be_filled"
-if [ "$CLUSTERNAME" == "southgreen" ]; then
+export COMPUTERNAME="to_be_filled"
+if [ "$COMPUTERNAME" == "laptop-pro"]; then
+    export PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
+fi
+if [ "$COMPUTERNAME" == "southgreen" ]; then
     . /etc/profile.d/modules.sh
     module load compiler/gcc-4.8.2
     
@@ -30,11 +35,11 @@ if [ "$CLUSTERNAME" == "southgreen" ]; then
     
     export PATH=/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:/usr/local/bioinfo/fastx_toolkit_0.0.14/bin:/usr/local/bioinfo/stacks-1.23/bin/:$PATH
 fi
-if [ "$CLUSTERNAME" == "urgi" ]; then
+if [ "$COMPUTERNAME" == "urgi" ]; then
     # http://stackoverflow.com/a/4454754/597069
     export GIT_SSL_NO_VERIFY=true
 fi
-if [ "$CLUSTERNAME" == "midway" ]; then
+if [ "$COMPUTERNAME" == "midway" ]; then
     module load gcc
     module load R/3.0
     module load git
