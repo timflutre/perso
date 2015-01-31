@@ -1,20 +1,27 @@
+;;;; Tim's initialization file for Emacs
+;; https://github.com/timflutre/perso/blob/master/emacs
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
+;; https://www.gnu.org/software/emacs/manual/html_node/eintr/Emacs-Initialization.html#Emacs-Initialization
+
 (custom-set-variables
- '(column-number-mode t) ;; in the mode line
- '(size-indication-mode t) ;; in the mode line
- '(display-time-mode 1) ;; in the mode line
- '(display-time-day-and-date t) ;; in the mode line
- '(display-time-24hr-format t) ;; in the mode line
+ '(column-number-mode t)
+ '(size-indication-mode t)
+ '(display-time-mode 1)
+ '(display-time-day-and-date t)
+ '(display-time-24hr-format t)
  '(case-fold-search t)
  '(current-language-environment "UTF-8")
  '(global-font-lock-mode t nil (font-lock))
-)
+ )
 
 ;; http://www.emacswiki.org/emacs/LoadPath
 ;; http://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/")
 
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
+(setq initial-scratch-message (concat "Hello " (user-full-name) "!"))
 
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Display-Feature-Testing.html
@@ -26,7 +33,7 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
- ;; http://stackoverflow.com/a/64558/597069
+;; http://stackoverflow.com/a/64558/597069
 (setq x-select-enable-clipboard t)
 
 ;; http://stackoverflow.com/a/14659015/597069
@@ -45,7 +52,6 @@
 ;; http://www.emacswiki.org/emacs/InputMethods
 (setq default-input-method "Tex")
 
-;; config for code
 ;; http://www.emacswiki.org/emacs/NoTabs
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -66,17 +72,20 @@
 
 ;;----------------------------------------------------------------------------
 
-;; START config Auto-Complete
+;;;; START config Auto-Complete
 ;; http://cx4a.org/software/auto-complete/
+
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
+
 ;; END config Auto-Complete
 
 ;;----------------------------------------------------------------------------
 
-;; START config ESS
+;;;; START config ESS
 ;; http://ess.r-project.org/
+
 (require 'ess-site)
 ;; (add-to-list 'load-path "~/src_ext/ess/ess-13.09-1/lisp/")
 ;; (load "ess-site")
@@ -87,20 +96,20 @@
 
 ;; http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards
 (add-hook 'ess-mode-hook
-  (lambda ()
-    (ess-set-style 'GNU 'quiet)
-    ;; Because
-    ;;                                 DEF GNU BSD K&R C++
-    ;; ess-indent-level                  2   2   8   5   4
-    ;; ess-continued-statement-offset    2   2   8   5   4
-    ;; ess-brace-offset                  0   0  -8  -5  -4
-    ;; ess-arg-function-offset           2   4   0   0   0
-    ;; ess-expression-offset             4   2   8   5   4
-    ;; ess-else-offset                   0   0   0   0   0
-    ;; ess-close-brace-offset            0   0   0   0   0
-    (add-hook 'local-write-file-hooks
-      (lambda ()
-        (ess-nuke-trailing-whitespace)))))
+          (lambda ()
+            (ess-set-style 'GNU 'quiet)
+            ;; Because
+            ;;                                 DEF GNU BSD K&R C++
+            ;; ess-indent-level                  2   2   8   5   4
+            ;; ess-continued-statement-offset    2   2   8   5   4
+            ;; ess-brace-offset                  0   0  -8  -5  -4
+            ;; ess-arg-function-offset           2   4   0   0   0
+            ;; ess-expression-offset             4   2   8   5   4
+            ;; ess-else-offset                   0   0   0   0   0
+            ;; ess-close-brace-offset            0   0   0   0   0
+            (add-hook 'local-write-file-hooks
+                      (lambda ()
+                        (ess-nuke-trailing-whitespace)))))
 (setq ess-nuke-trailing-whitespace-p 'ask)
 ;; or even
 ;; (setq ess-nuke-trailing-whitespace-p t)
@@ -116,6 +125,7 @@
 
 ;; tips source: http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
+
 ;; END config ESS
 
 ;; clear R console (http://stackoverflow.com/a/3450038/597069)
@@ -128,9 +138,10 @@
 
 ;;----------------------------------------------------------------------------
 
-;; START config AUCTeX
+;;;; START config AUCTeX
 ;; http://www.gnu.org/software/auctex/
 ;; http://www.emacswiki.org/emacs/AUCTeX
+
 ;; (load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/auctex.el" nil t t)
 ;; (load "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX/preview-latex.el" nil t t)
 ;; (add-to-list 'load-path "/home/tflutre/src_ext/LATEX_PKGS/AUCTEX")
@@ -139,12 +150,14 @@
 (setq-default TeX-master nil)
 (setq TeX-save-query nil)
 (setq TeX-PDF-mode t) ;; http://superuser.com/a/452409
+
 ;; END config AUCTeX
 
 ;;----------------------------------------------------------------------------
 
-;; START config org-mode (version >= 8)
+;;;; START config org-mode (version >= 8)
 ;; http://orgmode.org/
+
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
@@ -210,36 +223,41 @@
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
 (setq org-agenda-files (list "~/org/work.org"
                              "~/org/perso.org"))
+
 ;; END config org-mode
 
 ;;----------------------------------------------------------------------------
 
-;; START config python-mode
+;;;; START config python-mode
 ;; http://www.emacswiki.org/emacs/PythonProgrammingInEmacs
+
 (setq
  python-shell-interpreter "ipython"
  python-shell-interpreter-args ""
  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
  python-shell-completion-setup-code
-   "from IPython.core.completerlib import module_completion"
+ "from IPython.core.completerlib import module_completion"
  python-shell-completion-module-string-code
-   "';'.join(module_completion('''%s'''))\n"
+ "';'.join(module_completion('''%s'''))\n"
  python-shell-completion-string-code
-   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+ "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 ;; http://stackoverflow.com/a/4251387/597069
 (add-hook 'python-mode-hook
-  (function (lambda ()
-    (setq indent-tabs-mode nil
-      tab-width 2))))
+          (function (lambda ()
+                      (setq indent-tabs-mode nil
+                            tab-width 2))))
 
 ;; END config python-mode
 
 ;;----------------------------------------------------------------------------
 
-;; START config polymode
+;;;; START config polymode
+;; https://github.com/vspinu/polymode
+
 (add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+
 ;; END config polymode
