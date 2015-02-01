@@ -1,3 +1,4 @@
+;; -*- mode: lisp  -*-
 ;;;; Tim's initialization file for Emacs
 ;; https://github.com/timflutre/perso/blob/master/emacs
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
