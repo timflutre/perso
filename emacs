@@ -189,6 +189,17 @@
 (custom-set-faces '(org-level-7 ((t (:foreground "#191970")))))
 (custom-set-faces '(org-level-8 ((t (:foreground "#6495ed")))))
 
+;; http://orgmode.org/manual/Faces-for-TODO-keywords.html#Faces-for-TODO-keywords
+(setq org-todo-keyword-faces
+      '(("TODO" . org-warning)
+        ("àfaire" . org-warning)
+        ("STARTED" . (:foreground "#ff8c00"))
+        ("débuté" . (:foreground "#ff8c00"))
+        ("WAITING" . (:foreground "#ff8c00"))
+        ("attente" . (:foreground "#ff8c00"))
+        ("CANCELED" . (:foreground "gray20"))
+        ("annulé" . (:foreground "gray20"))))
+
 ;; http://tex.stackexchange.com/a/115081/11434
 (add-to-list 'org-latex-packages-alist '("" "lmodern"))
 
@@ -222,7 +233,8 @@
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
 (setq org-agenda-files (list "~/org/work.org"
-                             "~/org/perso.org"))
+                             "~/org/gtd.org"))
+(setq org-agenda-include-diary t)
 
 ;; END config org-mode
 
