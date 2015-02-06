@@ -205,7 +205,11 @@
 (add-to-list 'org-latex-packages-alist '("" "lmodern"))
 
 (add-to-list 'org-latex-packages-alist '("" "parskip"))
-(add-to-list 'org-latex-packages-alist '("" "underscore"))
+
+;; http://thread.gmane.org/gmane.emacs.orgmode/94685/focus=94692
+;; otherwise, keep it but use the grffile package
+;; (add-to-list 'org-latex-packages-alist '("" "underscore"))
+
 (add-to-list 'org-latex-packages-alist '("usenames,dvipsnames" "color"))
 (add-to-list 'org-latex-packages-alist '("" "listings"))
 (setq org-latex-listings t)
