@@ -63,6 +63,10 @@
 (setq sh-basic-offset 2
       sh-indentation 2)
 
+;; http://www.emacswiki.org/emacs/EasyPG
+(require 'epa-file)
+(epa-file-enable)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
