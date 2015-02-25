@@ -185,14 +185,16 @@
 (setq org-src-preserve-indentation t)
 
 ;; http://raebear.net/comp/emacscolors.html
-(custom-set-faces '(org-level-1 ((t (:foreground "#191970")))))
-(custom-set-faces '(org-level-2 ((t (:foreground "#6495ed")))))
-(custom-set-faces '(org-level-3 ((t (:foreground "#191970")))))
-(custom-set-faces '(org-level-4 ((t (:foreground "#6495ed")))))
-(custom-set-faces '(org-level-5 ((t (:foreground "#191970")))))
-(custom-set-faces '(org-level-6 ((t (:foreground "#6495ed")))))
-(custom-set-faces '(org-level-7 ((t (:foreground "#191970")))))
-(custom-set-faces '(org-level-8 ((t (:foreground "#6495ed")))))
+(custom-set-faces
+ '(org-level-1 ((t (:foreground "#191970"))))
+ '(org-level-2 ((t (:foreground "#6495ed"))))
+ '(org-level-3 ((t (:foreground "#191970"))))
+ '(org-level-4 ((t (:foreground "#6495ed"))))
+ '(org-level-5 ((t (:foreground "#191970"))))
+ '(org-level-6 ((t (:foreground "#6495ed"))))
+ '(org-level-7 ((t (:foreground "#191970"))))
+ '(org-level-8 ((t (:foreground "#6495ed"))))
+ )
 
 ;; http://orgmode.org/manual/Faces-for-TODO-keywords.html#Faces-for-TODO-keywords
 (setq org-todo-keyword-faces
@@ -203,7 +205,8 @@
         ("WAITING" . (:foreground "#ff8c00"))
         ("attente" . (:foreground "#ff8c00"))
         ("CANCELED" . (:foreground "gray20"))
-        ("annulé" . (:foreground "gray20"))))
+        ("annulé" . (:foreground "gray20")))
+      )
 
 ;; http://tex.stackexchange.com/a/115081/11434
 (add-to-list 'org-latex-packages-alist '("" "lmodern"))
@@ -237,12 +240,13 @@
         ("keywordstyle" "\\color{Blue}")
         ("stringstyle" "\\color{BrickRed}")
         ("commentstyle" "\\color{ForestGreen}")
-        ("columns" "fullflexible"))) ;avoid adding spaces
+        ("columns" "fullflexible")) ;avoid adding spaces
+      )
 ;; (add-to-list 'org-latex-packages-alist '("francais" "babel")) ;doesn't work with listings
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
-(setq org-agenda-files (list "~/org/work.org"
-                             "~/org/gtd.org"))
+(setq org-agenda-files (list "~/org/gtd_perso.org"
+                             "~/org/gtd_pro.org"))
 (setq org-agenda-include-diary t)
 
 ;; END config org-mode
