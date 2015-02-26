@@ -75,6 +75,17 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+;; http://unix.stackexchange.com/a/186565/34919
+(defun term-new ()
+  (interactive)
+  (command-execute 'term)
+  (setq-default truncate-lines nil)
+  (if (not (boundp 'term-number))
+      (defvar term-number 1 "term index in the current emacs session") )
+  (rename-buffer (concat "*terminal*<" (int-to-string term-number) ">"))
+  (setq term-number (+ 1 term-number))
+  )
+
 ;;----------------------------------------------------------------------------
 
 ;;;; START config Auto-Complete
