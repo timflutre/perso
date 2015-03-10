@@ -33,7 +33,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
     # http://stackoverflow.com/a/4454754/597069
     export GIT_SSL_NO_VERIFY=true
     
-    export PATH=/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:/usr/local/bioinfo/fastx_toolkit_0.0.14/bin:/usr/local/bioinfo/stacks-1.23/bin/:$PATH
+    export PATH=/usr/local/jdk/bin:/usr/local/jre/bin:/usr/local/bioinfo/fastqc_v0.11.2:/usr/local/bioinfo/fastx_toolkit_0.0.14/bin:/usr/local/bioinfo/stacks-1.23/bin/:$PATH
 fi
 if [ "$COMPUTERNAME" == "urgi" ]; then
     # http://stackoverflow.com/a/4454754/597069
