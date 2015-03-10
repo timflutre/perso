@@ -1,3 +1,4 @@
+# -*-Shell-script-*-
 # User specific aliases and functions
 alias ls='ls -F'
 alias ll='ls -l'
