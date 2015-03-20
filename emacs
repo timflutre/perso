@@ -4,6 +4,12 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/eintr/Emacs-Initialization.html#Emacs-Initialization
 
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq user-full-name "Timothée Flutre")
+(setq initial-scratch-message (concat "Hello " (user-full-name) "!"))
+
 (custom-set-variables
  '(column-number-mode t)
  '(size-indication-mode t)
@@ -18,11 +24,6 @@
 ;; http://www.emacswiki.org/emacs/LoadPath
 ;; http://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/")
-
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
-(setq inhibit-startup-message t)
-(setq inhibit-splash-screen t)
-(setq initial-scratch-message (concat "Hello " (user-full-name) "!"))
 
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Display-Feature-Testing.html
