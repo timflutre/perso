@@ -31,7 +31,9 @@ if [ "$COMPUTERNAME" == "laptop-pro" ]; then
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load system/emacs/24.4
+  module load bioinfo/xclip/0.12
   module load compiler/gcc/4.9.2
+  module load system/python/2.7.9
   module load system/java/jre6
   module load bioinfo/FastQC/0.11.2
   
