@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
+
 # Usage: cd; backup.bash >& backup.log &
-# Copyright (C) 2013-2014 Timothée Flutre
+# Copyright (C) 2013-2015 Timothée Flutre
 # License: GPL-3+
+
 set -e
 
 date
@@ -28,7 +30,7 @@ RSYNC_ARGS_GENERIC+=" --exclude='src_ext'"
 
 RSYNC_ARGS_SPECIFIC="empty"
 
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # prepare backup depending on the host
 
 if [ "$HOSTNAME" == "tflutre-laptop" ]; then
@@ -53,7 +55,7 @@ elif [ "$HOSTNAME" == "agap-flutre" ]; then
 	  if ! sudo mountpoint -q ${TARGET}; then
 	    echo "[$0]: mount ${TARGET}"
 	    # smbclient -L stocka2; nmblookup stocka2
-	    sudo mount.cifs //stocka2/backup-agap ${TARGET} -o user=flutre
+	    sudo mount.cifs //stocka2/backup-agap ${TARGET} --verbose -o username=flutre,domain=MTP,rw
 	  fi
   fi
   RSYNC_ARGS_SPECIFIC="--exclude='backup-agap'"
@@ -66,13 +68,15 @@ elif [ "$HOSTNAME" == "agap-flutre" ]; then
   RSYNC_ARGS_SPECIFIC+=" --exclude='R'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Téléchargements'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='tmp'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Vidéos'"
+  if [ ! -d /media/tflutre/tflutre-backup/ ]; then
+    RSYNC_ARGS_SPECIFIC+=" --exclude='Vidéos'"
+  fi
 else
   echo "[$0]: can't recognize host name '$HOSTNAME'"
   exit 1
 fi
 
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # perform backup similarly for all hosts
 
 RSYNC_CMD="${RSYNC}"
@@ -83,7 +87,7 @@ RSYNC_CMD+=" ${TARGET}"
 echo ${RSYNC_CMD}
 eval ${RSYNC_CMD}
 
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # finish backup depending on the host
 
 date
