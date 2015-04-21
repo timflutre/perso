@@ -54,6 +54,7 @@ if [ "$COMPUTERNAME" == "urgi" ]; then
 fi
 if [ "$COMPUTERNAME" == "midway" ]; then
   module load gcc
+  module load gdb
   module load R/3.0
   module load git
   module load coreutils
