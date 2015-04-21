@@ -34,6 +34,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load compiler/gcc/4.9.2
   module load bioinfo/xclip/0.12
   module load system/python/2.7.9
+  module load bioinfo/fastStructure/1.0
   module load bioinfo/gdal/1.9.2
   module load bioinfo/geos/3.4.2
   module load bioinfo/R/3.1.3
