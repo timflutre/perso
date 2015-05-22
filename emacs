@@ -104,7 +104,7 @@
 ;; http://ess.r-project.org/
 
 (require 'ess-site)
-;; (add-to-list 'load-path "~/src_ext/ess/ess-13.09-1/lisp/")
+;; (add-to-list 'load-path "~/src_ext/ess/ess-15.03-1/lisp/")
 ;; (load "ess-site")
 
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
