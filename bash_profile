@@ -46,6 +46,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/picard-tools/1.130
   module load bioinfo/GATK/3.3-0
   module load bioinfo/cutadapt/1.8.1
+  module load bioinfo/patman/1.2
+  module load bioinfo/insilicut/1.0.0
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
