@@ -30,24 +30,25 @@ if [ "$COMPUTERNAME" == "laptop-pro" ]; then
   export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
-  module load system/emacs/24.4
   module load compiler/gcc/4.9.2
+  module load system/emacs/24.4
   module load bioinfo/xclip/0.12
   module load system/python/2.7.9
-  module load bioinfo/fastStructure/1.0
   module load bioinfo/gdal/1.9.2
   module load bioinfo/geos/3.4.2
   module load bioinfo/R/3.1.3
   module load system/java/jre6
   module load system/java/jre7
   module load bioinfo/FastQC/0.11.2
-  module load bioinfo/ARCAD/1
-  module load bioinfo/OpenBUGS/3.2.3
+  module load bioinfo/cutadapt/1.8.1
   module load bioinfo/picard-tools/1.130
   module load bioinfo/GATK/3.3-0
-  module load bioinfo/cutadapt/1.8.1
+  module load bioinfo/bcftools/1.2
   module load bioinfo/patman/1.2
   module load bioinfo/insilicut/1.0.0
+  module load bioinfo/ARCAD/1
+  module load bioinfo/fastStructure/1.0
+  module load bioinfo/OpenBUGS/3.2.3
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
