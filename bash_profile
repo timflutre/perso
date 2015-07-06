@@ -44,6 +44,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/picard-tools/1.130
   module load bioinfo/GATK/3.3-0
   module load bioinfo/bcftools/1.2
+  module load bioinfo/bedtools/2.24.0
   module load bioinfo/patman/1.2
   module load bioinfo/insilicut/1.0.0
   module load bioinfo/ARCAD/1
