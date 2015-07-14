@@ -1,0 +1,47 @@
+# Tim's configuration file for Conky
+# http://conky.sourceforge.net/docs.html
+# https://github.com/brndnmtthws/conky/wiki/User-Configs
+# https://help.ubuntu.com/community/SettingUpConky
+# http://doc.ubuntu-fr.org/conky#conflit_entre_conky_et_lxde
+
+# Force Conky to reload ~/.conkyrc: "killall -SIGUSR1 conky"
+
+# Want conky to be forked in the background?
+background no
+
+alignment bottom_right
+
+own_window yes
+own_window_class Conky
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+
+# Update interval in seconds
+update_interval 30
+
+default_color white
+
+# Gap between borders of screen and text
+# gap_x 20
+# gap_y 20
+
+# Add spaces to keep things from moving about? (only affects certain objects)
+use_spacer yes
+
+# Use Xft font when Xft is enabled?
+use_xft yes
+xftfont DejaVu Sans:size=14
+
+uppercase no
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# stuff after 'TEXT' will be formatted on screen
+TEXT
+FRA: ${tztime Europe/Paris %H:%M}
+SGP: ${tztime Asia/Singapore %H:%M}
