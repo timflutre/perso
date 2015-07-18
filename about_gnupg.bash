@@ -68,12 +68,12 @@ make clean
 cd
 which gpg2
 gpg2 --version
-ls -l -d ~/.gnupg
 
 # http://bugs.gnupg.org/gnupg/issue1656
 # https://wiki.gnupg.org/GnomeKeyring
 
 # Start using it:
+# gpg2 --list-keys
 # gpg2 --gen-key
 # gpg2 --list-keys
 # export GPGKEY=D8FC66D2 # example
