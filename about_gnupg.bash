@@ -89,3 +89,5 @@ ls -l -d ~/.gnupg
 # gpg2 --list-secret-keys
 # gpg2 -ao <...>-private.key --export-secret-keys $GPGKEY
 # chmod go=-r-w-x <...>-private.key
+
+# http://security.stackexchange.com/questions/51771/where-do-you-store-your-personal-private-gpg-key
