@@ -110,6 +110,10 @@
 ;;;; START config ESS
 ;; http://ess.r-project.org/
 
+;; https://github.com/emacs-ess/ESS/issues/200
+(require 'cl-lib)
+(require 'cl)
+
 (require 'ess-site)
 ;; (add-to-list 'load-path "~/src_ext/ess/ess-15.03-1/lisp/")
 ;; (load "ess-site")
