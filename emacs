@@ -1,14 +1,11 @@
 ;; -*- mode: lisp  -*-
-;;;; Tim's initialization file for Emacs
-;; https://github.com/timflutre/perso/blob/master/emacs
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
-;; https://www.gnu.org/software/emacs/manual/html_node/eintr/Emacs-Initialization.html#Emacs-Initialization
 
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
-(setq inhibit-startup-message t)
-(setq inhibit-splash-screen t)
-(setq user-full-name "Timothée Flutre")
-(setq initial-scratch-message (concat "Hello " (user-full-name) "!"))
+;; Aim: customize Emacs
+;; Person: Timothée Flutre [cre,aut]
+;; Versioning: https://github.com/timflutre/perso
+
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
+;; https://www.gnu.org/software/emacs/manual/html_node/eintr/Emacs-Initialization.html
 
 (custom-set-variables
  '(column-number-mode t)
@@ -21,15 +18,33 @@
  '(global-font-lock-mode t nil (font-lock))
  )
 
-;; http://www.emacswiki.org/emacs/LoadPath
-;; http://www.emacswiki.org/emacs/DotEmacsDotD
-(add-to-list 'load-path "~/.emacs.d/")
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message (concat "Hello " (user-full-name) "!"))
 
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Display-Feature-Testing.html
 (if (display-graphic-p)
     (menu-bar-mode 1)
   (menu-bar-mode 0))
+
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+(setq package-user-dir "~/.emacs.d/lisp/")
+
+;; http://www.emacswiki.org/emacs/DotEmacsDotD
+;; http://www.emacswiki.org/emacs/LoadPath
+;; (add-to-list 'load-path "~/.emacs.d/")
+(let ((default-directory "~/.emacs.d/lisp/"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; http://www.emacswiki.org/emacs/ShowParenMode
 (setq show-paren-delay 0)
@@ -39,10 +54,10 @@
 (setq x-select-enable-clipboard t)
 
 ;; http://stackoverflow.com/a/14659015/597069
-(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.3/")
 (require 'xclip)
 (xclip-mode 1)
 
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/TeX-Print.html
 (setq latex-run-command "pdflatex")
 
 ;; http://www.emacswiki.org/emacs/AutoCompressionMode
@@ -68,14 +83,6 @@
 (require 'epa-file)
 (epa-file-enable)
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
-
 ;; http://unix.stackexchange.com/a/186565/34919
 (defun term-new ()
   (interactive)
@@ -90,10 +97,10 @@
 ;;----------------------------------------------------------------------------
 
 ;;;; START config Auto-Complete
-;; http://cx4a.org/software/auto-complete/
+;; http://auto-complete.org/
 
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete-20150618.1949/dict/")
 (ac-config-default)
 
 ;; END config Auto-Complete
@@ -134,11 +141,11 @@
 ;; https://stat.ethz.ch/pipermail/ess-help/2013-June/009094.html
 ;; https://stat.ethz.ch/pipermail/ess-help/2011-December/007342.html
 (setq ess-roxy-template-alist
-			(list (cons "description" "")
-						(cons "details" "")
-						(cons "param" "")
-						(cons "return" "")
-						(cons "author" "Timothée Flutre")))
+      (list (cons "description" "")
+	    (cons "details" "")
+	    (cons "param" "")
+	    (cons "return" "")
+	    (cons "author" "Timothee Flutre")))
 
 ;; tips source: http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
@@ -234,9 +241,9 @@
 (setq org-latex-listings t)
 (setq org-latex-listings-options
       '(("breaklines" "true")
-				;; ("breakatwhitespace" "true") ;can lead to too-long lines
-				;; ("breakautoindent" "true")
-				("linewidth" "\\textwidth")
+	;; ("breakatwhitespace" "true") ;can lead to too-long lines
+	;; ("breakautoindent" "true")
+	("linewidth" "\\textwidth")
         ("showspaces" "false")
         ("showstringspaces" "false")
         ("showtabs" "false")
@@ -246,7 +253,7 @@
         ("numberstyle" "\\footnotesize")
         ("stepnumber" "1")
         ("numbersep" "5pt")
-				("captionpos" "b")
+	("captionpos" "b")
         ;; ("frame" "single")
         ("backgroundcolor" "\\color[RGB]{248,248,248}") ;light grey
         ("keywordstyle" "\\color{Blue}")
@@ -257,7 +264,7 @@
 ;; (add-to-list 'org-latex-packages-alist '("francais" "babel")) ;doesn't work with listings
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
-(setq org-agenda-files (list "~/org/gtd_pro.org"
+(setq org-agenda-files (list "~/org/gtd_pro.gpg"
                              "~/org/gtd_perso.org"))
 (setq org-agenda-include-diary t)
 
