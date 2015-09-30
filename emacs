@@ -36,8 +36,8 @@
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(setq package-user-dir "~/.emacs.d/lisp/") ;; http://emacs.stackexchange.com/a/16606
 (package-initialize)
-(setq package-user-dir "~/.emacs.d/lisp/")
 
 ;; http://www.emacswiki.org/emacs/DotEmacsDotD
 ;; http://www.emacswiki.org/emacs/LoadPath
@@ -185,6 +185,7 @@
 
 ;;;; START config org-mode (version >= 8)
 ;; http://orgmode.org/
+;; installation: http://emacs.stackexchange.com/q/17017/9680
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
