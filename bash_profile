@@ -42,7 +42,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/FastQC/0.11.2
   module load bioinfo/cutadapt/1.8.1
   module load bioinfo/picard-tools/1.130
-  module load bioinfo/GATK/3.3-0
+  module load bioinfo/GATK/3.4-46
   module load bioinfo/bcftools/1.2
   module load bioinfo/bedtools/2.24.0
   module load bioinfo/patman/1.2
