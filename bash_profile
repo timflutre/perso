@@ -43,6 +43,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/cutadapt/1.8.1
   module load bioinfo/picard-tools/1.130
   module load bioinfo/GATK/3.4-46
+  module load bioinfo/htslib/1.2.1
   module load bioinfo/bcftools/1.2
   module load bioinfo/bedtools/2.24.0
   module load bioinfo/patman/1.2
@@ -77,5 +78,5 @@ if [ "$COMPUTERNAME" == "midway" ]; then
   module load gsl
   module load python
   module load parallel
-  export PATH=$HOME/bin:$PATH
 fi
+export PATH=$HOME/bin:$PATH
