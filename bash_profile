@@ -51,7 +51,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/ARCAD/1
   module load bioinfo/fastStructure/1.0
   module load bioinfo/OpenBUGS/3.2.3
-  module load bioinfo/blast/marmadais
+  module load bioinfo/ncbi-blast/2.2.30
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
