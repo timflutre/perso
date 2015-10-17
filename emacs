@@ -270,7 +270,7 @@
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
 (setq org-agenda-files (list "~/org/gtd_pro.gpg"
-                             "~/org/gtd_perso.org"))
+                             "~/org/gtd_perso.gpg"))
 (setq org-agenda-include-diary t)
 
 ;; END config org-mode

@@ -69,9 +69,7 @@ elif [ "$HOSTNAME" == "agap-flutre" ]; then
   RSYNC_ARGS_SPECIFIC+=" --exclude='R'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Téléchargements'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='tmp'"
-  if [ ! -d /media/tflutre/tflutre-backup/ ]; then
-    RSYNC_ARGS_SPECIFIC+=" --exclude='Vidéos'"
-  fi
+  RSYNC_ARGS_SPECIFIC+=" --exclude='Vidéos'"
 else
   echo "[$0]: can't recognize host name '$HOSTNAME'"
   exit 1
