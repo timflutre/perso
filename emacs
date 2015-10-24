@@ -220,6 +220,12 @@
  '(org-level-8 ((t (:foreground "#6495ed"))))
  )
 
+;; http://orgmode.org/manual/Workflow-states.html
+(setq org-todo-keywords
+      '((sequence "TODO" "STARTED" "WAITING" "|" "DONE" "ONEDAY" "CANCELLED")
+        (sequence "àfaire" "débuté" "attente" "|" "fait" "unjour" "annulé"))
+      )
+
 ;; http://orgmode.org/manual/Faces-for-TODO-keywords.html#Faces-for-TODO-keywords
 (setq org-todo-keyword-faces
       '(("TODO" . org-warning)
@@ -231,6 +237,8 @@
         ("CANCELED" . (:foreground "gray20"))
         ("annulé" . (:foreground "gray20")))
       )
+
+(setq org-tags-exclude-from-inheritance '("projet" "project"))
 
 ;; http://tex.stackexchange.com/a/115081/11434
 (add-to-list 'org-latex-packages-alist '("" "lmodern"))
