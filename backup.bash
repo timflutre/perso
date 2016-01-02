@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Usage: cd; backup.bash >& backup.log &
-# Copyright (C) 2013-2015 Timothée Flutre
+# Copyright (C) 2013-2016 Timothée Flutre
 # License: GPL-3+
 
 set -e
@@ -58,16 +58,22 @@ elif [ "$HOSTNAME" == "agap-flutre" ]; then
 	    sudo mount.cifs //stocka2/backup-agap ${TARGET} --verbose -o username=flutre,domain=MTP,rw
 	  fi
   fi
-  RSYNC_ARGS_SPECIFIC="--exclude='backup-agap'"
+  RSYNC_ARGS_SPECIFIC="--exclude='adonis-partage'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='backup-agap'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Bureau'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Calibre Library'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-cc2'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-marmadais'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-midway'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-pps'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Dropbox'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='igv'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='Musique'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='oboedit_config'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Public'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='R'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Téléchargements'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='texmf'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='tmp'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Vidéos'"
 else
