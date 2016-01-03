@@ -72,22 +72,32 @@ gpg2 --version
 # http://bugs.gnupg.org/gnupg/issue1656
 # https://wiki.gnupg.org/GnomeKeyring
 
-# Start using it:
+# Generate a key (public and private):
 # gpg2 --list-keys
 # gpg2 --gen-key
 # gpg2 --list-keys
 # export GPGKEY=D8FC66D2 # example
-# gpg2 --armor --output revcert.asc --gen-revoke $GPGKEY
-# chmod go=-r-w-x revcert.asc
-# gpg2 --send-keys $GPGKEY
-# gpg2 --search-key "you@email.net"
-# gpg2 --armor --output file.txt.asc --recipient you@email.net --encrypt file.txt
-# gpg2 --output file_decrypt.txt --decrypt file.txt.asc
+
+# Create a revocation certificate:
+# gpg2 --armor --output revcert_compromised-key.asc --gen-revoke $GPGKEY
+# chmod go=-r-w-x revcert_compromised-key.asc
+# copy this file to a USB key stored in a physically secure location
+
+# Backing up your key:
 # gpg2 --list-keys
 # gpg2 -ao <...>-public.key --export $GPGKEY
 # chmod go=-r-w-x <...>-public.key
 # gpg2 --list-secret-keys
 # gpg2 -ao <...>-private.key --export-secret-keys $GPGKEY
 # chmod go=-r-w-x <...>-private.key
+# copy these files to a USB key stored in a physically secure location
+
+# gpg2 --send-keys $GPGKEY
+# gpg2 --search-key "you@email.net"
+
+# Example of encrypting/decrypting a file:
+# gpg2 --armor --output file.txt.asc --recipient you@email.net --encrypt file.txt
+# gpg2 --output file_decrypt.txt --decrypt file.txt.asc
 
 # http://security.stackexchange.com/questions/51771/where-do-you-store-your-personal-private-gpg-key
+# http://security.stackexchange.com/questions/68187/is-it-necessary-to-remove-the-primary-secret-gpg-key-from-your-laptop-if-it-has
