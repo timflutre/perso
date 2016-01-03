@@ -101,3 +101,4 @@ gpg2 --version
 
 # http://security.stackexchange.com/questions/51771/where-do-you-store-your-personal-private-gpg-key
 # http://security.stackexchange.com/questions/68187/is-it-necessary-to-remove-the-primary-secret-gpg-key-from-your-laptop-if-it-has
+# https://wiki.debian.org/Subkeys?action=show&redirect=subkeys
