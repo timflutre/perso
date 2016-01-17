@@ -67,6 +67,7 @@ elif [ "$HOSTNAME" == "agap-flutre" ]; then
   RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-midway'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-pps'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Dropbox'"
+  RSYNC_ARGS_SPECIFIC+=" --exclude='gPodder'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='igv'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='Musique'"
   RSYNC_ARGS_SPECIFIC+=" --exclude='oboedit_config'"
