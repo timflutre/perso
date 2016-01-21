@@ -32,13 +32,14 @@ fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load compiler/gcc/4.9.2
   module load system/emacs/24.4
-  module load bioinfo/xclip/0.12
   module load system/python/2.7.9
+  module load system/java/jdk6
+  module load system/java/jre6
+  module load system/java/jre7
+  module load bioinfo/xclip/0.12
   module load bioinfo/gdal/1.9.2
   module load bioinfo/geos/3.4.2
   module load bioinfo/R/3.2.2
-  module load system/java/jre6
-  module load system/java/jre7
   module load bioinfo/FastQC/0.11.2
   module load bioinfo/cutadapt/1.8.1
   module load bioinfo/picard-tools/1.130
@@ -53,6 +54,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/OpenBUGS/3.2.3
   module load bioinfo/ncbi-blast/2.2.30
   module load bioinfo/prank/v.150803
+  module load bioinfo/beagle/4.0
+  module load bioinfo/beagle-lib/20150321
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
