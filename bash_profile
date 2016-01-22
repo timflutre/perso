@@ -31,6 +31,7 @@ if [ "$COMPUTERNAME" == "laptop-pro" ]; then
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load compiler/gcc/4.9.2
+  module load system/zlib/1.2.8
   module load system/emacs/24.4
   module load system/python/2.7.9
   module load system/java/jdk6
@@ -54,6 +55,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/OpenBUGS/3.2.3
   module load bioinfo/ncbi-blast/2.2.30
   module load bioinfo/prank/v.150803
+  module load bioinfo/vcftools/0.1.14_zlib-1.2.8
+  module load bioinfo/plink/1.90b3v
   module load bioinfo/beagle/4.0
   module load bioinfo/beagle-lib/20150321
   module load bioinfo/shapeIT/2.r837
