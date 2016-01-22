@@ -56,6 +56,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/prank/v.150803
   module load bioinfo/beagle/4.0
   module load bioinfo/beagle-lib/20150321
+  module load bioinfo/shapeIT/2.r837
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
