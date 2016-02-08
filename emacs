@@ -146,10 +146,11 @@
 ;; https://stat.ethz.ch/pipermail/ess-help/2011-December/007342.html
 (setq ess-roxy-template-alist
       (list (cons "description" "")
-	    (cons "details" "")
-	    (cons "param" "")
-	    (cons "return" "")
-	    (cons "author" "Timothee Flutre")))
+            (cons "details" "")
+            (cons "param" "")
+            (cons "return" "")
+            (cons "author" "Timothee Flutre")
+            (cons "export" "")))
 
 ;; tips source: http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
