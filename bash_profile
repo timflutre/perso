@@ -37,6 +37,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load system/java/jdk6
   module load system/java/jre6
   module load system/java/jre7
+  module load mpi/openmpi/1.6.5
   module load bioinfo/xclip/0.12
   module load bioinfo/gdal/1.9.2
   module load bioinfo/geos/3.4.2
