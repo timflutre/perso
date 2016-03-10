@@ -72,6 +72,10 @@ fi
 if [ "$COMPUTERNAME" == "urgi" ]; then
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
+  
+  export PATH=$PATH:/home/fruitselgen/bin
+  
+  export PYTHONPATH=$PYTHONPATH:/home/fruitselgen/lib/python2.7/site-packages/
 fi
 if [ "$COMPUTERNAME" == "midway" ]; then
   module load gcc
