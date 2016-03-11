@@ -7,6 +7,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+export NAME="Timothée Flutre"
 export PATH=$HOME/bin:$PATH
 export CFLAGS="$CFLAGS -I$HOME/include"
 export CPPFLAGS="$CPPFLAGS -I$HOME/include"
