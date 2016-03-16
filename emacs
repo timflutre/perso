@@ -250,6 +250,9 @@
 ;; otherwise, keep it but use the grffile package
 ;; (add-to-list 'org-latex-packages-alist '("" "underscore"))
 
+;; add "babel-francais" before "listings"
+(add-to-list 'org-latex-packages-alist '("francais" "babel"))
+
 (add-to-list 'org-latex-packages-alist '("usenames,dvipsnames" "color"))
 (add-to-list 'org-latex-packages-alist '("" "listings"))
 (setq org-latex-listings t)
@@ -275,7 +278,6 @@
         ("commentstyle" "\\color{ForestGreen}")
         ("columns" "fullflexible")) ;avoid adding spaces
       )
-;; (add-to-list 'org-latex-packages-alist '("francais" "babel")) ;doesn't work with listings
 (setq org-log-done 'time)
 (setq org-startup-truncated nil) ;so that lines longer than the screen are not truncated
 (setq org-agenda-files (list "~/org/gtd_pro.gpg"

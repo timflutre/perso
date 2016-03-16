@@ -8,15 +8,10 @@ fi
 
 # User specific environment and startup programs
 export NAME="Timothée Flutre"
-export PATH=$HOME/bin:$PATH
 export CFLAGS="$CFLAGS -I$HOME/include"
 export CPPFLAGS="$CPPFLAGS -I$HOME/include"
 export CXXFLAGS="$CXXFLAGS -I$HOME/include"
 export LDFLAGS="$LDFLAGS -L$HOME/lib"
-export MANPATH=$HOME/share/man:$MANPATH
-
-export R_LIBS_USER=$HOME/src_ext/Rlibs
-export PYTHONPATH=$HOME/lib/python/:$PYTHONPATH
 
 # http://perlgeek.de/en/article/set-up-a-clean-utf8-environment
 export LC_ALL=en_US.UTF-8
@@ -24,11 +19,11 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 # Machine specific environment
-COMPUTERNAME="to_be_filled"
+export COMPUTERNAME="to_be_filled"
 if [ "$COMPUTERNAME" == "laptop-pro" ]; then
-  export PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
-  export MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
-  export INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
+  PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
+  MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
+  INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load compiler/gcc/4.9.2
@@ -66,17 +61,20 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
   
-  export PATH=/usr/local/jdk/bin:/usr/local/jre/bin:$PATH
-  
-  export PYTHONPATH=$HOME/lib/python2.7/site-packages/:$PYTHONPATH
+  PATH=/usr/local/jdk/bin:/usr/local/jre/bin:$PATH
 fi
 if [ "$COMPUTERNAME" == "urgi" ]; then
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
   
-  export PATH=$PATH:/home/fruitselgen/bin
+  PATH=/home/fruitselgen/bin:/home/fruitselgen/texlive/bin/x86_64-linux:$PATH
   
-  export PYTHONPATH=$PYTHONPATH:/home/fruitselgen/lib/python2.7/site-packages/
+  R_LIBS_USER=/home/fruitselgen/lib/R:$R_LIBS_USER
+  
+  PYTHONPATH=/home/fruitselgen/lib/python2.7/site-packages/:$PYTHONPATH
+  
+  MANPATH=/home/fruitselgen/texlive/texmf-dist/doc/man:$MANPATH
+  INFOPATH=/home/fruitselgen/texlive/texmf-dist/doc/info:$INFOPATH
 fi
 if [ "$COMPUTERNAME" == "midway" ]; then
   module load gcc
@@ -94,4 +92,9 @@ if [ "$COMPUTERNAME" == "midway" ]; then
   module load python
   module load parallel
 fi
+
 export PATH=$HOME/bin:$PATH
+export R_LIBS_USER=$HOME/lib/R:$R_LIBS_USER
+export PYTHONPATH=$HOME/lib/python2.7/site-packages/:$PYTHONPATH
+export MANPATH=$HOME/share/man:$MANPATH
+export INFOPATH=$INFOPATH
