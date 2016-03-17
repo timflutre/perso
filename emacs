@@ -250,17 +250,14 @@
 ;; otherwise, keep it but use the grffile package
 ;; (add-to-list 'org-latex-packages-alist '("" "underscore"))
 
-;; add "babel-francais" before "listings"
-(add-to-list 'org-latex-packages-alist '("francais" "babel"))
-
 (add-to-list 'org-latex-packages-alist '("usenames,dvipsnames" "color"))
 (add-to-list 'org-latex-packages-alist '("" "listings"))
 (setq org-latex-listings t)
 (setq org-latex-listings-options
       '(("breaklines" "true")
-	;; ("breakatwhitespace" "true") ;can lead to too-long lines
-	;; ("breakautoindent" "true")
-	("linewidth" "\\textwidth")
+        ;; ("breakatwhitespace" "true") ;can lead to too-long lines
+        ;; ("breakautoindent" "true")
+        ("linewidth" "\\textwidth")
         ("showspaces" "false")
         ("showstringspaces" "false")
         ("showtabs" "false")
@@ -270,7 +267,7 @@
         ("numberstyle" "\\footnotesize")
         ("stepnumber" "1")
         ("numbersep" "5pt")
-	("captionpos" "b")
+        ("captionpos" "b")
         ;; ("frame" "single")
         ("backgroundcolor" "\\color[RGB]{248,248,248}") ;light grey
         ("keywordstyle" "\\color{Blue}")
@@ -283,6 +280,9 @@
 (setq org-agenda-files (list "~/org/gtd_pro.gpg"
                              "~/org/gtd_perso.gpg"))
 (setq org-agenda-include-diary t)
+
+;; add "babel-francais" before "listings"
+(add-to-list 'org-latex-packages-alist '("francais" "babel"))
 
 ;; END config org-mode
 
