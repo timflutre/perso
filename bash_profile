@@ -61,7 +61,10 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
   
-  PATH=/usr/local/jdk/bin:/usr/local/jre/bin:$PATH
+  PATH=/usr/local/jdk/bin:/usr/local/jre/bin:/homedir/flutre/texlive/bin/x86_64-linux:$PATH
+  
+  MANPATH=/home/flutre/texlive/texmf-dist/doc/man:$MANPATH
+  INFOPATH=/home/flutre/texlive/texmf-dist/doc/info:$INFOPATH
 fi
 if [ "$COMPUTERNAME" == "urgi" ]; then
   # http://stackoverflow.com/a/4454754/597069
