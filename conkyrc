@@ -1,4 +1,6 @@
-# Tim's configuration file for Conky
+# Tim's .conkyrc
+# Versioning: https://github.com/timflutre/perso
+
 # http://conky.sourceforge.net/docs.html
 # https://github.com/brndnmtthws/conky/wiki/User-Configs
 # https://help.ubuntu.com/community/SettingUpConky

@@ -1,25 +1,13 @@
 # -*-Shell-script-*-
-# Tim's configuration file for Bash
+# Tim's .bash_profile
+# Versioning: https://github.com/timflutre/perso
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-# User specific environment and startup programs
-export NAME="Timothée Flutre"
-export CFLAGS="$CFLAGS -I$HOME/include"
-export CPPFLAGS="$CPPFLAGS -I$HOME/include"
-export CXXFLAGS="$CXXFLAGS -I$HOME/include"
-export LDFLAGS="$LDFLAGS -L$HOME/lib"
-
-# http://perlgeek.de/en/article/set-up-a-clean-utf8-environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-
-# Machine specific environment
-export COMPUTERNAME="to_be_filled"
+# Machine specific environment (define COMPUTERNAME in .bashrc)
 if [ "$COMPUTERNAME" == "laptop-pro" ]; then
   PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
   MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
@@ -73,8 +61,6 @@ if [ "$COMPUTERNAME" == "urgi" ]; then
   
   PATH=/home/fruitselgen/bin:/home/fruitselgen/texlive/bin/x86_64-linux:$PATH
   
-  R_LIBS_USER=/home/fruitselgen/lib/R:$R_LIBS_USER
-  
   PYTHONPATH=/home/fruitselgen/lib/python2.7/site-packages/:$PYTHONPATH
   
   MANPATH=/home/fruitselgen/texlive/texmf-dist/doc/man:$MANPATH
@@ -98,7 +84,7 @@ if [ "$COMPUTERNAME" == "midway" ]; then
 fi
 
 export PATH=$HOME/bin:$PATH
-export R_LIBS_USER=$HOME/lib/R:$R_LIBS_USER
 export PYTHONPATH=$HOME/lib/python2.7/site-packages/:$PYTHONPATH
 export MANPATH=$HOME/share/man:$MANPATH
 export INFOPATH=$INFOPATH
+# see .Rprofile for R_LIBS_USER
