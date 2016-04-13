@@ -1,0 +1,5 @@
+## Tim's .Renviron
+## Versioning: https://github.com/timflutre/perso
+
+# to know more about this file, open R and do help(Startup)
+R_LIBS_USER=~/lib/R/%p-library/%v

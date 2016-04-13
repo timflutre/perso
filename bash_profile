@@ -87,4 +87,4 @@ export PATH=$HOME/bin:$PATH
 export PYTHONPATH=$HOME/lib/python2.7/site-packages/:$PYTHONPATH
 export MANPATH=$HOME/share/man:$MANPATH
 export INFOPATH=$INFOPATH
-# see .Rprofile for R_LIBS_USER
+# see .Renviron for R_LIBS_USER
