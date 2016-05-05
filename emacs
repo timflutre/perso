@@ -32,7 +32,7 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
@@ -78,6 +78,10 @@
       indent-tabs-mode t)
 (setq sh-basic-offset 2
       sh-indentation 2)
+
+;; https://www.emacswiki.org/emacs/InteractivelyDoThings
+(require 'ido)
+(ido-mode t)
 
 ;; http://www.emacswiki.org/emacs/EasyPG
 (require 'epa-file)
@@ -285,31 +289,6 @@
 (add-to-list 'org-latex-packages-alist '("francais" "babel"))
 
 ;; END config org-mode
-
-;;----------------------------------------------------------------------------
-
-;;;; START config python-mode
-;; http://www.emacswiki.org/emacs/PythonProgrammingInEmacs
-
-(setq
- python-shell-interpreter "ipython"
- python-shell-interpreter-args ""
- python-shell-prompt-regexp "In \\[[0-9]+\\]: "
- python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
- python-shell-completion-setup-code
- "from IPython.core.completerlib import module_completion"
- python-shell-completion-module-string-code
- "';'.join(module_completion('''%s'''))\n"
- python-shell-completion-string-code
- "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
-
-;; http://stackoverflow.com/a/4251387/597069
-(add-hook 'python-mode-hook
-          (function (lambda ()
-                      (setq indent-tabs-mode nil
-                            tab-width 2))))
-
-;; END config python-mode
 
 ;;----------------------------------------------------------------------------
 
