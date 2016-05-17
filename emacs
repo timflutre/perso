@@ -54,8 +54,9 @@
 (setq x-select-enable-clipboard t)
 
 ;; http://stackoverflow.com/a/14659015/597069
-(require 'xclip)
-(xclip-mode 1)
+(when (and (executable-find "xclip")
+           (require 'xclip nil 'noerror))
+  (xclip-mode 1))
 
 ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/TeX-Print.html
 (setq latex-run-command "pdflatex")
