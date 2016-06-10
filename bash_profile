@@ -21,6 +21,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load system/java/jdk6
   module load system/java/jre6
   module load system/java/jre7
+  module load system/boost/1_58_0
   module load mpi/openmpi/1.6.5
   module load bioinfo/xclip/0.12
   module load bioinfo/gdal/1.9.2
@@ -46,6 +47,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/beagle/4.0
   module load bioinfo/beagle-lib/20150321
   module load bioinfo/shapeIT/2.r837
+  module load bioinfo/OpenBLAS/0.2.18
+  module load bioinfo/bmagwa/2.0
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
