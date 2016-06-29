@@ -3,4 +3,4 @@
 
 Sys.setenv(LANGUAGE="en")
 
-options(repos=c(CRAN="http://ftp.igh.cnrs.fr/pub/CRAN/"))
+options(repos=c(CRAN="https://cloud.r-project.org/"))
