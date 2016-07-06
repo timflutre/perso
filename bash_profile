@@ -49,6 +49,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/shapeIT/2.r837
   module load bioinfo/OpenBLAS/0.2.18
   module load bioinfo/bmagwa/2.0
+  module load bioinfo/MUMmer/3.23
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
