@@ -17,6 +17,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load compiler/gcc/4.9.2
   module load system/zlib/1.2.8
   module load system/emacs/24.4
+  module load system/git/2.8.3
   module load system/python/2.7.9
   module load system/java/jdk6
   module load system/java/jre6
@@ -31,7 +32,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/FastQC/0.11.2
   module load bioinfo/cutadapt/1.8.1
   module load bioinfo/picard-tools/1.130
-  module load bioinfo/GATK/3.5-0
+  module load bioinfo/GATK/3.6-0
   module load bioinfo/htslib/1.2.1
   module load bioinfo/samtools/1.3
   module load bioinfo/bcftools/1.3
