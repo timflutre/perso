@@ -157,12 +157,42 @@
             (cons "author" "Timothee Flutre")
             (cons "export" "")))
 
-;; tips source: http://www.emacswiki.org/emacs/ESSAuto-complete
+;; http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
 
 ;; END config ESS
 
-;; clear R console (http://stackoverflow.com/a/3450038/597069)
+;; execute all R chunks at once from an Rmd document
+;; http://stackoverflow.com/a/40966640/597069
+(eval-when-compile
+  (require 'polymode-core)  ;; SO format :('
+  (defvar pm/chunkmode))
+(declare-function pm-map-over-spans "polymode-core")
+(declare-function pm-narrow-to-span "polymode-core")
+
+(defun rmd-send-chunk ()
+  "Send current R chunk to ess process."
+  (interactive)
+  (and (eq (oref pm/chunkmode :mode) 'r-mode) ;;'
+       (pm-with-narrowed-to-span nil
+         (goto-char (point-min))
+         (forward-line)
+         (ess-eval-region (point) (point-max) nil nil 'R)))) ;;'
+
+(defun rmd-send-buffer (arg)
+  "Send all R code blocks in buffer to ess process. With prefix
+send regions above point."
+  (interactive "P")
+  (save-restriction
+    (widen)
+    (save-excursion
+      (pm-map-over-spans
+       'rmd-send-chunk (point-min) ;;'
+       ;; adjust this point to send prior regions
+       (if arg (point) (point-max))))))
+
+;; clear R console
+;; http://stackoverflow.com/a/3450038/597069
 ;; (defun clear-shell ()
 ;;    (interactive)
 ;;    (let ((old-max comint-buffer-maximum-size))
