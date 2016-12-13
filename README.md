@@ -8,7 +8,7 @@ Here is a list of free softwares I find useful:
 - office suite / suite bureautique: LibreOffice https://www.libreoffice.org/
 - backup / synchronisation: rsync https://en.wikipedia.org/wiki/Rsync
 - password manager / gestionnaire de mots de passe: KeePassX https://en.wikipedia.org/wiki/KeePassX
-- reference manager / gestionnaire de références: Zotero https://en.wikipedia.org/wiki/Zotero
+- reference manager / gestionnaire de références: Zotero https://en.wikipedia.org/wiki/Zotero (with extensions Zotfile and Better Bibtex)
 - audio player / lecteur audio: Rhythmbox https://wiki.gnome.org/Apps/Rhythmbox
 - audio player / lecteur audio: Quod Libet http://quodlibet.readthedocs.org/en/latest/
 - audio tagging / éditeur de balises musicales: Picard https://picard.musicbrainz.org/
