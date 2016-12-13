@@ -5,7 +5,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 Here is a list of free softwares I find useful:
 - text editor / éditeur de texte: Emacs https://www.gnu.org/software/emacs/ ; http://endlessparentheses.com/running-emacs-on-android.html
 - internet browser / navigateur internet: Firefox https://www.mozilla.org/firefox/
-  - with extension Markdown Viewer
+  - with extensions Adblock Plus and Markdown Viewer
 - office suite / suite bureautique: LibreOffice https://www.libreoffice.org/
 - backup / synchronisation: rsync https://en.wikipedia.org/wiki/Rsync
 - password manager / gestionnaire de mots de passe: KeePassX https://en.wikipedia.org/wiki/KeePassX
