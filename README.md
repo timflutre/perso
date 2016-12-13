@@ -31,6 +31,9 @@ Here is a list of free softwares I find useful:
     - Automatically rename new attachments = "Always rename"
     - unselect everything
   - Preferences > Sync: enter id and password, then click on Sync with Zotero Server
+- screenshot / capture d'écran: Shutter http://shutter-project.org/
+- image editor / éditeur d'images: GIMP http://www.gimp.org/
+- image editor / éditeur d'images: Inkscape https://inkscape.org/
 - audio player / lecteur audio: Rhythmbox https://wiki.gnome.org/Apps/Rhythmbox
 - audio player / lecteur audio: Quod Libet http://quodlibet.readthedocs.org/en/latest/
 - audio tagging / éditeur de balises musicales: Picard https://picard.musicbrainz.org/
@@ -40,8 +43,6 @@ Here is a list of free softwares I find useful:
 - podcast: gPodder http://gpodder.org/
 - genealogy / généalogie: Gramps https://gramps-project.org/
 - encryption / cryptage: GnuPG https://gnupg.org/
-- screenshot / capture d'écran: Shutter http://shutter-project.org/
-- image editor / éditeur d'images: GIMP http://www.gimp.org/
-- image editor / éditeur d'images: Inkscape https://inkscape.org/
+- monitoring / contrôle: Glances https://pypi.python.org/pypi/Glances
 - émulateur de terminal sur Android: Termux https://termux.com/
 - clavier d'ordi sur Andoid: Hacker's keyboard https://github.com/klausw/hackerskeyboard
