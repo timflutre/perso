@@ -6,10 +6,12 @@ Here is a list of free softwares I find useful:
 - text editor / éditeur de texte: Emacs https://www.gnu.org/software/emacs/ ; http://endlessparentheses.com/running-emacs-on-android.html
 - internet browser / navigateur internet: Firefox https://www.mozilla.org/firefox/
 - office suite / suite bureautique: LibreOffice https://www.libreoffice.org/
+- backup / synchronisation: rsync https://en.wikipedia.org/wiki/Rsync
 - audio player / lecteur audio: Rhythmbox https://wiki.gnome.org/Apps/Rhythmbox
 - audio player / lecteur audio: Quod Libet http://quodlibet.readthedocs.org/en/latest/
 - audio tagging / éditeur de balises musicales: Picard https://picard.musicbrainz.org/
 - CD ripping / extracteur de musique: Sound Juicer https://wiki.gnome.org/Apps/SoundJuicer
+- CD burning / graveur de CS: Xfburn http://goodies.xfce.org/projects/applications/xfburn
 - video player / lecteur de vidéos: VLC https://www.videolan.org/vlc/
 - podcast: gPodder http://gpodder.org/
 - genealogy / généalogie: Gramps https://gramps-project.org/
