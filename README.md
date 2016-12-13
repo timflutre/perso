@@ -5,10 +5,32 @@ As such, some files have a license (GPL) whereas others are simply in the public
 Here is a list of free softwares I find useful:
 - text editor / éditeur de texte: Emacs https://www.gnu.org/software/emacs/ ; http://endlessparentheses.com/running-emacs-on-android.html
 - internet browser / navigateur internet: Firefox https://www.mozilla.org/firefox/
+  - with extension Markdown Viewer
 - office suite / suite bureautique: LibreOffice https://www.libreoffice.org/
 - backup / synchronisation: rsync https://en.wikipedia.org/wiki/Rsync
 - password manager / gestionnaire de mots de passe: KeePassX https://en.wikipedia.org/wiki/KeePassX
-- reference manager / gestionnaire de références: Zotero https://en.wikipedia.org/wiki/Zotero (with extensions Zotfile and Better Bibtex)
+- reference manager / gestionnaire de références: Zotero https://en.wikipedia.org/wiki/Zotero
+  - with extensions Zotfile and Better Bibtex
+  - Preferences > Advanced > Files and Folders:
+    - Base directory = ~/Documents/travail/biblio_zotero
+    - Data directory location = Use profile directory
+  - Zotfile preferences > General Settings
+    - Source folder for attaching new files: select "Use Firefox download folder"
+    - unselect "Watch for new files in source folder"
+    - Location of files: Custom location = same as Zotero base directory
+  - Zotfile preferences > Renaming Rules
+    - unselect "Use Zotero to rename"
+    - format = {%F_}{%y_}{%t}
+    - unselect "Change to lower case"
+    - select "Replace blanks"
+    - select "Truncate title"
+    - max length = 80
+    - max nb authors = 1
+    - select "Add suffix when authors are omitted" = " et al"
+  - Zotfile preferences > Advanced settings
+    - Automatically rename new attachments = "Always rename"
+    - unselect everything
+  - Preferences > Sync: enter id and password, then click on Sync with Zotero Server
 - audio player / lecteur audio: Rhythmbox https://wiki.gnome.org/Apps/Rhythmbox
 - audio player / lecteur audio: Quod Libet http://quodlibet.readthedocs.org/en/latest/
 - audio tagging / éditeur de balises musicales: Picard https://picard.musicbrainz.org/
