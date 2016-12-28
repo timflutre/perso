@@ -6,7 +6,7 @@ Here is a list of free softwares I find useful:
 - text editor / éditeur de texte: [Emacs](https://en.wikipedia.org/wiki/Emacs)
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
-  - with extensions Adblock Plus and Markdown Viewer
+  - with extensions Adblock Plus, Tab Mix Plus and Markdown Viewer
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
 - typesetting / composition: [TeX Live](https://en.wikipedia.org/wiki/TeX_Live)
 - backup / synchronisation: [Rsync](https://en.wikipedia.org/wiki/Rsync)
