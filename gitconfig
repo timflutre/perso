@@ -6,7 +6,8 @@
 	status = auto
 	branch = auto
 [core]
-	editor = emacs
+	editor = vi
+	autocrlf = input
 [i18n]
 	commitEncoding = utf8
 	logOutputEncoding = utf8
