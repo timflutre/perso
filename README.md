@@ -9,6 +9,7 @@ Here is a list of free softwares I find useful:
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
   - with [extensions](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) Adblock Plus, Tab Mix Plus and Markdown Viewer
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
+- markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
 - typesetting / composition: [TeX Live](https://en.wikipedia.org/wiki/TeX_Live)
 - backup / synchronisation: [Rsync](https://en.wikipedia.org/wiki/Rsync)
 - password manager / gestionnaire de mots de passe: [KeePassX](https://en.wikipedia.org/wiki/KeePassX)
