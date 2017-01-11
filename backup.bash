@@ -1,116 +1,67 @@
 #!/usr/bin/env bash
 
-# Usage: cd; backup.bash >& backup.log &
-# Copyright (C) 2013-2016 Timothée Flutre
+# Usage: nohup backup.bash >& backup.log &
+# Copyright (C) 2013-2017 Timothée Flutre
 # License: GPL-3+
+# Inspiration: https://blog.interlinked.org/tutorials/rsync_time_machine.html
 
 set -e
 
 date
 
-RSYNC="empty"
-
-SOURCE="${HOME}/"
-
-TARGET="empty"
-
-RSYNC_ARGS_GENERIC="-Cavzh"
-RSYNC_ARGS_GENERIC+=" --delete"
-RSYNC_ARGS_GENERIC+=" --delete-excluded"
-RSYNC_ARGS_GENERIC+=" --stats"
-RSYNC_ARGS_GENERIC+=" --progress"
-RSYNC_ARGS_GENERIC+=" --exclude='.*'"
-RSYNC_ARGS_GENERIC+=" --exclude='.*/'"
-RSYNC_ARGS_GENERIC+=" --exclude='*~'"
-RSYNC_ARGS_GENERIC+=" --exclude='bin'"
-RSYNC_ARGS_GENERIC+=" --exclude='include'"
-RSYNC_ARGS_GENERIC+=" --exclude='lib'"
-RSYNC_ARGS_GENERIC+=" --exclude='share'"
-RSYNC_ARGS_GENERIC+=" --exclude='src_ext'"
-
-RSYNC_ARGS_SPECIFIC="empty"
-
 # -----------------------------------------------------------------------------
-# prepare backup depending on the host
+# prepare backup
 
-if [ "$HOSTNAME" == "tflutre-laptop" ]; then
-  RSYNC="rsync"
-  TARGET="/media/tflutre/tflutre-backup/backup_${HOSTNAME}/"
-  RSYNC_ARGS_SPECIFIC="--exclude='AeroFS'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='clusterpps'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Desktop'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Downloads'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Dropbox'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Public'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='tmp'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Ubuntu One'"
-elif [ "$HOSTNAME" == "agap-flutre" ]; then
-  if [ -d /media/tflutre/tflutre-backup/ ]; then
-	  RSYNC="rsync"
-	  TARGET="/media/tflutre/tflutre-backup/backup_${HOSTNAME}/"
-  else
-	  RSYNC="sudo rsync"
-	  TARGET="${HOME}/backup-agap/"
-	# if grep -qs "${TARGET}" /proc/mounts; then
-	  if ! sudo mountpoint -q ${TARGET}; then
-	    echo "[$0]: mount ${TARGET}"
-	    # smbclient -L stocka2; nmblookup stocka2
-	    sudo mount.cifs //stocka2/backup-agap ${TARGET} --verbose -o username=flutre,domain=MTP,rw
-	  fi
-  fi
-  RSYNC_ARGS_SPECIFIC="--exclude='adonis-partage'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='backup-agap'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Bureau'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Calibre Library'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-cc2'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-marmadais'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-midway'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='cluster-pps'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Dropbox'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='gdalwmscache'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='gPodder'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='igv'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Musique'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='oboedit_config'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Public'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='R'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Téléchargements'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='texmf'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='tmp'"
-  RSYNC_ARGS_SPECIFIC+=" --exclude='Vidéos'"
-else
-  echo "[$0]: can't recognize host name '$HOSTNAME'"
+SOURCE="${HOME}"
+if [ ! -d "${SOURCE}" ]; then
+  echo -e "ERROR: source directory ${SOURCE} doesn't exist";
   exit 1
 fi
 
-# -----------------------------------------------------------------------------
-# perform backup similarly for all hosts
+PATH_TO_TARGET="/media/tflutre/tflutre-backup"
+if [ ! -d "${PATH_TO_TARGET}" ]; then
+  echo -e "ERROR: path to target directory ${PATH_TO_TARGET} doesn't exist";
+  exit 1
+fi
 
-RSYNC_CMD="${RSYNC}"
-RSYNC_CMD+=" ${RSYNC_ARGS_GENERIC}"
-RSYNC_CMD+=" ${RSYNC_ARGS_SPECIFIC}"
-RSYNC_CMD+=" ${SOURCE}"
-RSYNC_CMD+=" ${TARGET}"
+PREVIOUS_BACKUP="backup_${HOSTNAME}_latest"
+if [ ! -d "${PATH_TO_TARGET}/${PREVIOUS_BACKUP}" ]; then
+  echo -e "ERROR: previous backup directory ${PATH_TO_TARGET}/${PREVIOUS_BACKUP} doesn't exist";
+  exit 1
+fi
+
+CURRENT_BACKUP="backup_${HOSTNAME}_$(date "+%F_%H-%M-%S")"
+if [ -d "${PATH_TO_TARGET}/${CURRENT_BACKUP}" ]; then
+  echo -e "ERROR: current backup directory ${PATH_TO_TARGET}/${CURRENT_BACKUP} already exists";
+  exit 1
+fi
+
+EXCLUDE_FILE="${SOURCE}/.rsync/exclude.txt"
+
+RSYNC_ARGS="-axzChP"
+RSYNC_ARGS+=" --stats"
+RSYNC_ARGS+=" --delete"
+RSYNC_ARGS+=" --delete-excluded"
+if [ -f "${EXCLUDE_FILE}" ]; then
+  echo -e "INFO: use exclude file ${EXCLUDE_FILE}";
+  RSYNC_ARGS+=" --exclude-from=${EXCLUDE_FILE}"
+fi
+RSYNC_ARGS+=" --link-dest=${PATH_TO_TARGET}/${PREVIOUS_BACKUP}"
+
+# -----------------------------------------------------------------------------
+# perform backup
+
+RSYNC_CMD="rsync"
+RSYNC_CMD+=" ${RSYNC_ARGS}"
+RSYNC_CMD+=" ${SOURCE}/"
+RSYNC_CMD+=" ${PATH_TO_TARGET}/${CURRENT_BACKUP}"
 echo ${RSYNC_CMD}
 eval ${RSYNC_CMD}
 
 # -----------------------------------------------------------------------------
-# finish backup depending on the host
+# finish backup
+
+rm -rf ${PATH_TO_TARGET}/${PREVIOUS_BACKUP}
+ln -s ${PATH_TO_TARGET}/${CURRENT_BACKUP} ${PATH_TO_TARGET}/${PREVIOUS_BACKUP}
 
 date
-
-if [ -f backup.log ]; then
-  if [ "$HOSTNAME" == "tflutre-laptop" ]; then
-	  cp backup.log ${TARGET}
-  elif [ "$HOSTNAME" == "agap-flutre" ]; then
-	  if [ -d /media/tflutre/tflutre-backup/ ]; then
-	    cp backup.log ${TARGET}
-	  else
-	    sudo cp backup.log ${TARGET}
-	  fi
-  fi
-fi
-if [ "$HOSTNAME" == "agap-flutre" ] && sudo mountpoint -q ${TARGET}; then
-  echo "[$0]: unmount ${TARGET}"
-  sudo umount ${TARGET}
-fi
