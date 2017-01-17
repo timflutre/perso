@@ -21,7 +21,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load system/python/2.7.9
   module load system/java/jdk6
   module load system/java/jre6
-  module load system/java/jre7
+  module load system/java/jre7 # caution: conflict with R package XLConnect
   module load system/boost/1_58_0
   module load mpi/openmpi/1.6.5
   module load bioinfo/gs3/20160920
