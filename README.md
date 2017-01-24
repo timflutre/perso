@@ -7,14 +7,14 @@ Here is a list of free softwares I find useful:
   - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, ess and polymode
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
-  - with [extensions](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) Adblock Plus, Tab Mix Plus and Markdown Viewer
+  - with [extensions](https://addons.mozilla.org/en-US/firefox/) Adblock Plus, Tab Mix Plus and Markdown Viewer
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
 - typesetting / composition: [TeX Live](https://en.wikipedia.org/wiki/TeX_Live)
 - backup / synchronisation: [Rsync](https://en.wikipedia.org/wiki/Rsync)
 - password manager / gestionnaire de mots de passe: [KeePassX](https://en.wikipedia.org/wiki/KeePassX)
 - reference manager / gestionnaire de références: [Zotero](https://en.wikipedia.org/wiki/Zotero)
-  - with [plugins](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) Zotfile and Better Bibtex
+  - with [plugins](https://www.zotero.org/support/plugins) Zotfile and Better Bibtex
   - Preferences > Advanced > Files and Folders:
     - Base directory = ~/Documents/travail/biblio_zotero
     - Data directory location = Use profile directory
@@ -36,7 +36,7 @@ Here is a list of free softwares I find useful:
     - unselect everything
   - Preferences > Sync: enter id and password, then click on Sync with Zotero Server
 - statistical computing: [R](https://en.wikipedia.org/wiki/R_(programming_language))
-  - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) Matrix, data.table, Rcpp, among others
+  - with [packages](https://cran.r-project.org/web/packages/) Matrix, data.table, Rcpp, devtools, testthat, among others
 - screenshot / capture d'écran: [Shutter](http://shutter-project.org/)
 - image editor / éditeur d'images: [GIMP](https://en.wikipedia.org/wiki/GIMP)
 - image editor / éditeur d'images: [Inkscape](https://en.wikipedia.org/wiki/Inkscape)
