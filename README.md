@@ -2,7 +2,9 @@ This repository contains the files I need on most (all?) of my computers, whethe
 I provide these files without any warranty, more for me (as a backup), yet they can be useful to others.
 As such, some files have a license (GPL) whereas others are simply in the public domain.
 
-Here is a list of free softwares I find useful:
+
+# List of free softwares I find useful
+
 - text editor / éditeur de texte: [Emacs](https://en.wikipedia.org/wiki/Emacs)
   - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, ess and polymode
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
@@ -52,3 +54,26 @@ Here is a list of free softwares I find useful:
 - monitoring / contrôle: [Glances](https://pypi.python.org/pypi/Glances)
 - émulateur de terminal sur Android: [Termux](https://termux.com/)
 - clavier d'ordi sur Android: [Hacker's keyboard](https://github.com/klausw/hackerskeyboard)
+
+
+# Install procedure working for me
+
+1. download an [ISO image](https://en.wikipedia.org/wiki/ISO_image) of a given GNU/Linux distribution (ex.: [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system)))
+2. create a [bootable USB](https://en.wikipedia.org/wiki/Boot_disk) stick (use [GParted](https://en.wikipedia.org/wiki/GParted) to first format the USB as [FAT32](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32), then use [usb-creator](https://en.wikipedia.org/wiki/Startup_Disk_Creator))
+3. boot on the USB and install the distribution
+4. install `KeepassX` and set up `.ssh`
+5. update `Firefox` and install its extensions
+6. update all packages, and install new ones for `vim`, `emacs` and `git`
+7. clone [my](https://github.com/timflutre) git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
+8. set up `.bashrc`, `.bash_profile`, `.emacs`, `.gitconfig`
+9. install the Dropbox client
+10. install the latest `R` version ([help](https://cran.r-project.org/bin/linux/ubuntu/README)), and set up `.Renviron` and `.Rprofile`
+
+
+# Tips
+
+* knowing my distribution: `cat /etc/*-release`
+* knowing my operating system: `uname -a`
+* checking network interfaces: `ifconfig -a`
+* scan wifi networks: `sudo iwlist wlan0 scan`
+* diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
