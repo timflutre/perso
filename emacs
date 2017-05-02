@@ -102,10 +102,10 @@
 ;;----------------------------------------------------------------------------
 
 ;;;; START config Auto-Complete
-;; http://auto-complete.org/
+;; https://github.com/auto-complete/auto-complete
 
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete-20150618.1949/dict/")
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete-20150618.1949/dict/")
 (ac-config-default)
 
 ;; END config Auto-Complete
