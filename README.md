@@ -6,7 +6,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 # List of free softwares I find useful
 
 - text editor / éditeur de texte: [Emacs](https://en.wikipedia.org/wiki/Emacs)
-  - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, ess and polymode
+  - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, ess, markdown-mode and polymode
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
   - with [extensions](https://addons.mozilla.org/en-US/firefox/) Adblock Plus, Tab Mix Plus and Markdown Viewer
@@ -61,7 +61,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 1. download an [ISO image](https://en.wikipedia.org/wiki/ISO_image) of a given GNU/Linux distribution (ex.: [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system)))
 2. create a [bootable USB](https://en.wikipedia.org/wiki/Boot_disk) stick (use [GParted](https://en.wikipedia.org/wiki/GParted) to first format the USB as [FAT32](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32), then use [usb-creator](https://en.wikipedia.org/wiki/Startup_Disk_Creator))
 3. boot on the USB and install the distribution
-4. install `KeepassX` and set up `.ssh`
+4. install `KeePassX` and set up `.ssh`
 5. update `Firefox` and install its extensions
 6. update all packages, and install new ones for `vim`, `emacs` and `git`
 7. clone [my](https://github.com/timflutre) git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
