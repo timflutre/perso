@@ -96,6 +96,10 @@ gpg2 --version
 # gpg2 --import <...>-public.key
 # gpg2 --import <...>-private.key
 
+# Set their trust level:
+# gpg2 --edit-key my@email.com
+# > trust ; 5 ; y ; quit
+
 # gpg2 --send-keys $GPGKEY
 # gpg2 --search-key "you@email.net"
 
