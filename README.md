@@ -61,7 +61,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 1. download an [ISO image](https://en.wikipedia.org/wiki/ISO_image) of a given GNU/Linux distribution (ex.: [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system)))
 2. create a [bootable USB](https://en.wikipedia.org/wiki/Boot_disk) stick (use [GParted](https://en.wikipedia.org/wiki/GParted) to first format the USB as [FAT32](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32), then use [usb-creator](https://en.wikipedia.org/wiki/Startup_Disk_Creator))
 3. boot on the USB and install the distribution
-4. install `KeePassX` and set up `.ssh`
+4. install `KeePassX`, set up `.ssh` (copy pub/priv keys) and `.gnupg` (import pub/priv keys)
 5. update `Firefox` and install its extensions
 6. update all packages, and install new ones for `vim`, `emacs` and `git`
 7. clone [my](https://github.com/timflutre) git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
@@ -77,3 +77,4 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * checking network interfaces: `ifconfig -a`
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
+* install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)

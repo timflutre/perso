@@ -92,6 +92,10 @@ gpg2 --version
 # chmod go=-r-w-x <...>-private.key
 # copy these files to a USB key stored in a physically secure location
 
+# Import keys:
+# gpg2 --import <...>-public.key
+# gpg2 --import <...>-private.key
+
 # gpg2 --send-keys $GPGKEY
 # gpg2 --search-key "you@email.net"
 
