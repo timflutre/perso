@@ -32,7 +32,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/FastQC/0.11.2
   module load bioinfo/cutadapt/1.8.1
   module load bioinfo/picard-tools/1.130
-  module load bioinfo/GATK/3.6-0
+  module load bioinfo/GATK/3.7-0
   module load bioinfo/htslib/1.2.1
   module load bioinfo/samtools/1.3
   module load bioinfo/bcftools/1.3
@@ -52,6 +52,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/OpenBLAS/0.2.18
   module load bioinfo/bmagwa/2.0
   module load bioinfo/MUMmer/3.23
+  module load bioinfo/carthagene/1.3
   
   # http://stackoverflow.com/a/4454754/597069
   export GIT_SSL_NO_VERIFY=true
