@@ -1,0 +1,11 @@
+ForwardAgent yes
+
+Host github-perso
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+Host github-pro
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_pro

@@ -64,8 +64,8 @@ As such, some files have a license (GPL) whereas others are simply in the public
 4. install `KeePassX`, set up `.ssh` (copy pub/priv keys) and `.gnupg` (import pub/priv keys)
 5. update `Firefox` and install its extensions
 6. update all packages, and install new ones for `vim`, `emacs` and `git`
-7. clone [my](https://github.com/timflutre) git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
-8. set up `.bashrc`, `.bash_profile`, `.emacs`, `.gitconfig`
+7. clone my git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
+8. set up `.bashrc`, `.bash_profile`, `.ssh/config`, `.emacs`, `.gitconfig`
 9. install the Dropbox client
 10. install the latest `R` version ([help](https://cran.r-project.org/bin/linux/ubuntu/README)), and set up `.Renviron` and `.Rprofile`
 
