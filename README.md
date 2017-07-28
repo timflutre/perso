@@ -61,11 +61,11 @@ As such, some files have a license (GPL) whereas others are simply in the public
 1. download an [ISO image](https://en.wikipedia.org/wiki/ISO_image) of a given GNU/Linux distribution (ex.: [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu_(operating_system)))
 2. create a [bootable USB](https://en.wikipedia.org/wiki/Boot_disk) stick (use [GParted](https://en.wikipedia.org/wiki/GParted) to first format the USB as [FAT32](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32), then use [usb-creator](https://en.wikipedia.org/wiki/Startup_Disk_Creator))
 3. boot on the USB and install the distribution
-4. install `KeePassX`, set up `.ssh` (copy pub/priv keys) and `.gnupg` (import pub/priv keys)
+4. install `KeePassX`, set up `.ssh` (copy pub/priv keys and config) and `.gnupg` (import pub/priv keys)
 5. update `Firefox` and install its extensions
-6. update all packages, and install new ones for `vim`, `emacs` and `git`
+6. update all packages, and install new ones for `vim`, `emacs` and `git` (set up `.gitconfig`)
 7. clone my git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
-8. set up `.bashrc`, `.bash_profile`, `.ssh/config`, `.emacs`, `.gitconfig`
+8. set up `.bashrc`, `.bash_profile`, `.emacs`
 9. install the Dropbox client
 10. install the latest `R` version ([help](https://cran.r-project.org/bin/linux/ubuntu/README)), and set up `.Renviron` and `.Rprofile`
 
