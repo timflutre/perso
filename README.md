@@ -74,6 +74,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 
 * knowing my distribution: `cat /etc/*-release`
 * knowing my operating system: `uname -a`
+* knowing my memory: `free -ht`
 * checking network interfaces: `ifconfig -a`
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
