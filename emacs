@@ -331,3 +331,21 @@ send regions above point."
 (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
 
 ;; END config polymode
+
+;;----------------------------------------------------------------------------
+
+;;;; START config octave-mode
+;; https://www.gnu.org/software/octave/doc/v4.0.3/Using-Octave-Mode.html
+;; https://www.emacswiki.org/emacs/OctaveMode
+
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+
+(add-hook 'octave-mode-hook
+          (lambda ()
+            (abbrev-mode 1)
+            (auto-fill-mode 1)
+            (if (eq window-system 'x)
+                (font-lock-mode 1))))
+
+;; END config octave-mode
