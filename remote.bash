@@ -40,5 +40,7 @@ if [[ "${server}" == "cc2" ]]; then
   fi
   if [[ "${task}" == "umount" ]]; then
     umount /home/tflutre/mnt/cc2_flutre # need "sudo"
+    ## see also https://stackoverflow.com/a/25986155/597069
+    ## fusermount -uz /home/tflutre/mnt/cc2_flutre
   fi
 fi
