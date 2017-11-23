@@ -14,14 +14,16 @@ if [ "$COMPUTERNAME" == "laptop-pro" ]; then
   INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
+  module load compiler/glibc/2.14 # used by GEMMA v0.96
   module load compiler/gcc/4.9.2
   module load system/zlib/1.2.8
   module load system/emacs/24.4
   module load system/git/2.8.3
   module load system/python/2.7.9
-  module load system/java/jdk6
-  module load system/java/jre6
-  module load system/java/jre7 # caution: conflict with R package XLConnect
+  # module load system/java/jdk6 # caution: conflict with jr6 and jr7
+  # module load system/java/jre6
+  # module load system/java/jre7 # caution: conflict with R package XLConnect
+  module load system/java/jre8 # required by FastQC
   module load system/boost/1_58_0
   module load mpi/openmpi/1.6.5
   module load bioinfo/gs3/20160920
@@ -46,8 +48,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/prank/v.150803
   module load bioinfo/vcftools/0.1.14_zlib-1.2.8
   module load bioinfo/plink/1.90b3v
-  module load bioinfo/beagle/4.0
-  module load bioinfo/beagle-lib/20150321
+  # module load bioinfo/beagle/4.0
+  # module load bioinfo/beagle-lib/20150321
   module load bioinfo/shapeIT/2.r837
   module load bioinfo/OpenBLAS/0.2.18
   module load bioinfo/bmagwa/2.0
