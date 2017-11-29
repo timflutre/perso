@@ -14,7 +14,7 @@ if [ "$COMPUTERNAME" == "laptop-pro" ]; then
   INFOPATH=/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
-  module load compiler/glibc/2.14 # used by GEMMA v0.96
+  # module load compiler/glibc/2.14 # used by GEMMA v0.96 static bin
   module load compiler/gcc/4.9.2
   module load system/zlib/1.2.8
   module load system/emacs/24.4
