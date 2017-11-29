@@ -7,7 +7,7 @@
 # Versioning: https://github.com/timflutre/perso
 # Inspiration: https://blog.interlinked.org/tutorials/rsync_time_machine.html
 
-progVersion="0.1.0" # http://semver.org/
+progVersion="0.2.0" # http://semver.org/
 
 # Display the help on stdout.
 # The format complies with help2man (http://www.gnu.org/s/help2man)
@@ -140,6 +140,21 @@ on your system, use -h for help"
 }
 
 function run () {
+  if [ $verbose -gt "0" ]; then
+    echo "INFO: check available space..."
+    perc=$(df -H | grep ${targetDir} | awk '{sub("%","",$5); print $5}')
+    if [ $perc -gt "90" ]; then
+      msg="ERROR: running out of space"
+      msg+=" ("$perc"%)"
+      echo -e $msg
+      exit 1
+    else
+      msg="INFO: enough space"
+      msg+=" ("$perc"%)"
+      echo -e $msg
+    fi
+  fi
+  
   RSYNC_ARGS="-axzChP"
   RSYNC_ARGS+=" --stats"
   RSYNC_ARGS+=" --delete"
@@ -171,16 +186,18 @@ parseCmdLine "$@"
 
 if [ $verbose -gt "0" ]; then
   startTime=$(timer)
-  msg="START ${0##*/} ${progVersion} $(date +"%Y-%m-%d") $(date +"%H:%M:%S")"
-  msg+="\ncmd-line: $0 "$@ # comment if an option takes a glob as argument
-  msg+="\ncwd: $(pwd)"
+  msg="INFO: start ${0##*/} ${progVersion} $(date +"%Y-%m-%d")"
+  msg+=" $(date +"%H:%M:%S")"
+  msg+="\nINFO: cmd-line: $0 "$@ # comment if an option takes a glob as argument
+  msg+="\nINFO: cwd: $(pwd)"
   echo -e $msg
 fi
 
 run
 
 if [ $verbose -gt "0" ]; then
-  msg="END ${0##*/} ${progVersion} $(date +"%Y-%m-%d") $(date +"%H:%M:%S")"
+  msg="INFO: end ${0##*/} ${progVersion} $(date +"%Y-%m-%d")"
+  msg+=" $(date +"%H:%M:%S")"
   msg+=" ($(timer startTime))"
   echo $msg
 fi
