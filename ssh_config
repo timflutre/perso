@@ -9,3 +9,8 @@ Host github-pro
     HostName github.com
     User git
     IdentityFile ~/.ssh/id_rsa_pro
+
+Host sourcesup
+     HostName git.renater.fr
+     User git
+     IdentityFile ~/.ssh/id_rsa_pro
