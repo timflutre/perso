@@ -12,6 +12,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - with [extensions](https://addons.mozilla.org/en-US/firefox/) Adblock Plus, Tab Mix Plus and Markdown Viewer
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
+  - to convert this README to HTML: `pandoc README.md -f commonmark -t html -s -o README.html`
 - typesetting / composition: [TeX Live](https://en.wikipedia.org/wiki/TeX_Live)
 - backup / synchronisation: [Rsync](https://en.wikipedia.org/wiki/Rsync)
 - password manager / gestionnaire de mots de passe: [KeePassX](https://en.wikipedia.org/wiki/KeePassX)
@@ -39,6 +40,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - Preferences > Sync: enter id and password, then click on Sync with Zotero Server
 - statistical computing: [R](https://en.wikipedia.org/wiki/R_(programming_language))
   - with [packages](https://cran.r-project.org/web/packages/) Matrix, data.table, Rcpp, devtools, testthat, among others
+- hypervisor / hyperviseur: [VirtualBox](https://en.wikipedia.org/wiki/VirtualBox)
 - screenshot / capture d'écran: [Shutter](http://shutter-project.org/)
 - image editor / éditeur d'images: [GIMP](https://en.wikipedia.org/wiki/GIMP)
 - image editor / éditeur d'images: [Inkscape](https://en.wikipedia.org/wiki/Inkscape)
@@ -81,3 +83,6 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)
 * turn off `gnome-keyring` ([source](https://stackoverflow.com/a/25465155/597069)): `sudo chmod -x /usr/bin/gnome-keyring-daemon`
 * install latest LibreOffice: [download](http://www.libreoffice.org/download), `tar -xzvf`, `sudo dpkg -i *.deb`
+* set up a virtual machine: [tuto](https://itsfoss.com/install-windows-10-virtualbox-linux/)
+  1. `mkdir -p ~/vima; cd ~/vima; cp <...>/mw10.iso .`
+  2. File -> Parameters... -> General -> Default directory: set `~/vima`
