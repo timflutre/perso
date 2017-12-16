@@ -74,15 +74,21 @@ As such, some files have a license (GPL) whereas others are simply in the public
 
 # Tips
 
-* knowing my distribution: `cat /etc/*-release`
-* knowing my operating system: `uname -a`
-* knowing my memory: `free -ht`
-* checking network interfaces: `ifconfig -a`
+* get info about distribution: `cat /etc/*-release`
+* get info about operating system: `uname -a`
+* get info about memory: `free -ht`
+* check network interfaces: `ifconfig -a`
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
 * install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)
 * turn off `gnome-keyring` ([source](https://stackoverflow.com/a/25465155/597069)): `sudo chmod -x /usr/bin/gnome-keyring-daemon`
 * install latest LibreOffice: [download](http://www.libreoffice.org/download), `tar -xzvf`, `sudo dpkg -i *.deb`
-* set up a virtual machine: [tuto](https://itsfoss.com/install-windows-10-virtualbox-linux/)
-  1. `mkdir -p ~/vima; cd ~/vima; cp <...>/mw10.iso .`
-  2. File -> Parameters... -> General -> Default directory: set `~/vima`
+* set up a virtual machine with VirtualBox:
+  1. `sudo apt-get install virtualbox`
+  2. `mkdir -p ~/vima` (allow to exclude it easily from backup via `rsync`)
+  3. `vboxmanage setproperty machinefolder /home/tflutre/vima/`
+  4. `cd ~/vima; ln -s ~/src_ext/windows/mw10.iso .`
+  5. follow the [tuto](https://itsfoss.com/install-windows-10-virtualbox-linux/)
+  6. `mkdir -p ~/vima/shared_dir`
+  7. install extension pack
+* [cheatsheet](https://www.computerhope.com/issues/chusedos.htm) to use Windows command line (DOS)
