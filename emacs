@@ -105,7 +105,7 @@
 ;; https://github.com/auto-complete/auto-complete
 
 (require 'auto-complete-config)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete-20150618.1949/dict/")
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/auto-complete-20170124.1845/dict/")
 (ac-config-default)
 
 ;; END config Auto-Complete
@@ -119,9 +119,12 @@
 (require 'cl-lib)
 (require 'cl)
 
-(require 'ess-site)
-;; (add-to-list 'load-path "~/src_ext/ess/ess-15.03-1/lisp/")
-;; (load "ess-site")
+;; http://ess.r-project.org/Manual/ess.html#Installation
+;; use the system-wide version (in /usr/share/emacs):
+;; (require 'ess-site)
+;; or use the version from M-x list-packages:
+(add-to-list 'load-path "~/.emacs.d/lisp/ess-20180109.1719/lisp/")
+(load "ess-site")
 
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
