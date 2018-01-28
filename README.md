@@ -1,3 +1,5 @@
+<!-- pandoc README.md -f commonmark -t html -s -o README.html -->
+
 This repository contains the files I need on most (all?) of my computers, whether they are for work or personal usage.
 I provide these files without any warranty, more for me (as a backup), yet they can be useful to others.
 As such, some files have a license (GPL) whereas others are simply in the public domain.
@@ -77,6 +79,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * get info about distribution: `cat /etc/*-release`
 * get info about operating system: `uname -a`
 * get info about memory: `free -ht`
+* get info about file system: `df -T`, then `sudo dumpe2fs /dev/sda6 | less`
 * check network interfaces: `ifconfig -a`
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
