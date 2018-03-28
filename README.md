@@ -13,6 +13,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
   - with [extensions](https://addons.mozilla.org/en-US/firefox/) Adblock Plus, Tab Mix Plus and Markdown Viewer
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
+  - in Calc, turn off `AutoInput` in `Tools`
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
   - to convert this README to HTML: `pandoc README.md -f commonmark -t html -s -o README.html`
 - typesetting / composition: [TeX Live](https://en.wikipedia.org/wiki/TeX_Live)
