@@ -12,6 +12,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
   - with [extensions](https://addons.mozilla.org/en-US/firefox/) Adblock Plus, Tab Mix Plus and Markdown Viewer
+  - take whole-page screenshot: Settings > Web development > Development tools > Tool options > Take a screenshot of the whole page
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
   - in Calc, turn off `AutoInput` in `Tools`
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
