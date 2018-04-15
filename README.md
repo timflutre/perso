@@ -17,6 +17,8 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - in Calc, turn off `AutoInput` in `Tools`
 - PDF editor / éditeur de PDF: [PDFtk](https://en.wikipedia.org/wiki/PDFtk)
   - extract pages: `pdftk input.pdf cat 2-7 output output.pdf`
+- media metadata editor / éditeur de méta-données de médias: [ExifTool](https://en.wikipedia.org/wiki/ExifTool)
+  - rename photos: `exiftool '-filename<CreateDate' -d %Y-%m-%d_%H%M%S%%-c.%%le -r -ext jpg *`
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
   - to convert this README to HTML: `pandoc README.md -f commonmark -t html -s -o README.html`
 - typesetting / composition: [TeX Live](https://en.wikipedia.org/wiki/TeX_Live)
