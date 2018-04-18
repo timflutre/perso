@@ -28,7 +28,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load mpi/openmpi/1.6.5
   module load bioinfo/gs3/20160920
   module load bioinfo/xclip/0.12
-  module load bioinfo/gdal/1.9.2
+  module load bioinfo/gdal/2.2.4
   module load bioinfo/geos/3.4.2
   module load bioinfo/R/3.4.3
   module load bioinfo/FastQC/0.11.2
