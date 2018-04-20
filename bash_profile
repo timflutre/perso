@@ -15,8 +15,8 @@ if [ "$COMPUTERNAME" == "laptop-pro" ]; then
 fi
 if [ "$COMPUTERNAME" == "southgreen" ]; then
   # module load compiler/glibc/2.14 # used by GEMMA v0.96 static bin
-  # module load compiler/gcc/4.9.2
-  module load compiler/gcc/6.3.0 # used by GEMMA v0.97
+  module load compiler/gcc/4.9.2 # used by many softwares
+  # module load compiler/gcc/6.3.0 # used by GEMMA v0.97
   module load system/zlib/1.2.8
   module load system/emacs/24.4
   module load system/git/2.8.3
@@ -39,7 +39,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/fastStructure/1.0
   module load bioinfo/GATK/3.7-0
   module load bioinfo/gdal/2.2.4
-  module load bioinfo/gemma/0.97
+  # module load bioinfo/gemma/0.97 # requires gcc/6.3.0
   module load bioinfo/geos/3.4.2
   module load bioinfo/gs3/20160920
   module load bioinfo/htslib/1.2.1
