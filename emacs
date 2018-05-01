@@ -233,10 +233,11 @@ send regions above point."
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((R . t)
-   (sh . t)
+   (shell . t)
    (python . t)
    ))
 (setq org-confirm-babel-evaluate nil)
+;; https://emacs.stackexchange.com/a/37695/9680
 
 ;; http://orgmode.org/worg/org-contrib/babel/examples/fontify-src-code-blocks.html
 (setq org-src-fontify-natively t)
