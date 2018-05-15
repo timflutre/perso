@@ -27,8 +27,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load system/java/jre8 # required by FastQC
   module load system/boost/1_58_0
   module load mpi/openmpi/1.6.5
-  module load bioinfo/ARCAD/1
-  module load bioinfo/bcftools/1.3
+  # module load bioinfo/ARCAD/1
+  module load bioinfo/bcftools/1.8
   module load bioinfo/beagle/4.1
   # module load bioinfo/beagle-lib/20150321
   module load bioinfo/bedtools/2.24.0
@@ -42,7 +42,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   # module load bioinfo/gemma/0.97 # requires gcc/6.3.0
   module load bioinfo/geos/3.4.2
   module load bioinfo/gs3/20160920
-  module load bioinfo/htslib/1.2.1
+  module load bioinfo/htslib/1.8
   module load bioinfo/insilicut/1.0.0
   module load bioinfo/MUMmer/3.23
   module load bioinfo/ncbi-blast/2.2.30
