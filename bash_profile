@@ -35,6 +35,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load bioinfo/bmagwa/2.0
   module load bioinfo/carthagene/1.3
   module load bioinfo/cutadapt/1.8.1
+  module load bioinfo/datamash/1.3
   module load bioinfo/FastQC/0.11.2
   module load bioinfo/fastStructure/1.0
   module load bioinfo/GATK/3.7-0
