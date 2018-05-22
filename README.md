@@ -61,7 +61,9 @@ As such, some files have a license (GPL) whereas others are simply in the public
 - podcast: [gPodder](http://gpodder.org/)
 - genealogy / généalogie: [Gramps](https://en.wikipedia.org/wiki/Gramps)
 - encryption / cryptage: [GnuPG](https://en.wikipedia.org/wiki/GNU_Privacy_Guard)
-- monitoring / contrôle: [Glances](https://pypi.python.org/pypi/Glances)
+- monitoring / contrôle:
+  - processes and networks: [Glances](https://pypi.python.org/pypi/Glances)
+  - disks: [smartmontools](https://www.smartmontools.org/) and its GUI GSmartControl
 - émulateur de terminal sur Android: [Termux](https://termux.com/)
 - clavier d'ordi sur Android: [Hacker's keyboard](https://github.com/klausw/hackerskeyboard)
 
