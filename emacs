@@ -121,10 +121,9 @@
 
 ;; http://ess.r-project.org/Manual/ess.html#Installation
 ;; use the system-wide version (in /usr/share/emacs):
-;; (require 'ess-site)
 ;; or use the version from M-x list-packages:
-(add-to-list 'load-path "~/.emacs.d/lisp/ess-20180109.1719/lisp/")
-(load "ess-site")
+;; (add-to-list 'load-path "~/.emacs.d/lisp/ess-20180109.1719/lisp/")
+(require 'ess-site)
 
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
@@ -165,7 +164,16 @@
 
 ;; END config ESS
 
-;; execute all R chunks at once from an Rmd document
+;; https://emacs.stackexchange.com/a/27419
+(defun rmd-insert-chunk (header)
+  "Insert an R chunk."
+  (interactive "sHeader: ")
+	(if (equal "" header)
+			(insert (concat "```{r}\n\n```"))
+		(insert (concat "```{r " header "}\n\n```")))
+  (forward-line -1))
+
+;; execute (all) R chunks at once from an Rmd document
 ;; http://stackoverflow.com/a/40966640/597069
 (eval-when-compile
   (require 'polymode-core)  ;; SO format :('
@@ -174,7 +182,7 @@
 (declare-function pm-narrow-to-span "polymode-core")
 
 (defun rmd-send-chunk ()
-  "Send current R chunk to ess process."
+  "Send current R chunk to ESS process."
   (interactive)
   (and (eq (oref pm/chunkmode :mode) 'r-mode) ;;'
        (pm-with-narrowed-to-span nil
@@ -183,8 +191,7 @@
          (ess-eval-region (point) (point-max) nil nil 'R)))) ;;'
 
 (defun rmd-send-buffer (arg)
-  "Send all R code blocks in buffer to ess process. With prefix
-send regions above point."
+  "Send all R chunks in buffer to ESS process. With prefix, send chunks above."
   (interactive "P")
   (save-restriction
     (widen)
