@@ -7,28 +7,6 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/eintr/Emacs-Initialization.html
 
-(custom-set-variables
- '(column-number-mode t)
- '(size-indication-mode t)
- '(display-time-mode 1)
- '(display-time-day-and-date t)
- '(display-time-24hr-format t)
- '(case-fold-search t)
- '(current-language-environment "UTF-8")
- '(global-font-lock-mode t nil (font-lock))
- )
-
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
-(setq inhibit-startup-message t)
-(setq inhibit-splash-screen t)
-(setq initial-scratch-message (concat "Hello " (user-full-name) "!"))
-
-;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Display-Feature-Testing.html
-(if (display-graphic-p)
-    (menu-bar-mode 1)
-  (menu-bar-mode 0))
-
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html
 (require 'package)
 (add-to-list 'package-archives
@@ -38,6 +16,45 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (setq package-user-dir "~/.emacs.d/lisp/") ;; http://emacs.stackexchange.com/a/16606
 (package-initialize)
+;; https://emacs.stackexchange.com/a/27300/9680
+(setq package-selected-packages
+      '(
+        auctex
+        auto-complete
+        ess
+        markdown-mode
+        polymode
+        xclip
+        ))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(case-fold-search t)
+ '(column-number-mode t)
+ '(current-language-environment "UTF-8")
+ '(display-time-24hr-format t)
+ '(display-time-day-and-date t)
+ '(display-time-mode 1)
+ '(global-font-lock-mode t nil (font-lock))
+ '(size-indication-mode t))
+
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message
+			(concat "Hello " (user-full-name) "!"
+							"\n* system type: " (symbol-name system-type)
+              "\n* Emacs version: " emacs-version
+							"\n* system name: " system-name))
+
+;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Menu-Bars.html
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Display-Feature-Testing.html
+(if (display-graphic-p)
+    (menu-bar-mode 1)
+  (menu-bar-mode 0))
 
 ;; http://www.emacswiki.org/emacs/DotEmacsDotD
 ;; http://www.emacswiki.org/emacs/LoadPath
@@ -164,6 +181,10 @@
 
 ;; END config ESS
 
+;; to avoid issues with polymode:
+;; https://github.com/vspinu/polymode/issues/147
+(global-set-key (kbd "C-c =") " <- ")
+
 ;; https://emacs.stackexchange.com/a/27419
 (defun rmd-insert-chunk (header)
   "Insert an R chunk."
@@ -257,6 +278,10 @@
 
 ;; http://raebear.net/comp/emacscolors.html
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(org-level-1 ((t (:foreground "#191970"))))
  '(org-level-2 ((t (:foreground "#6495ed"))))
  '(org-level-3 ((t (:foreground "#191970"))))
@@ -264,8 +289,7 @@
  '(org-level-5 ((t (:foreground "#191970"))))
  '(org-level-6 ((t (:foreground "#6495ed"))))
  '(org-level-7 ((t (:foreground "#191970"))))
- '(org-level-8 ((t (:foreground "#6495ed"))))
- )
+ '(org-level-8 ((t (:foreground "#6495ed")))))
 
 ;; http://orgmode.org/manual/Workflow-states.html
 (setq org-todo-keywords
