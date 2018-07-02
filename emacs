@@ -7,6 +7,9 @@
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html
 ;; https://www.gnu.org/software/emacs/manual/html_node/eintr/Emacs-Initialization.html
 
+;; emacs --daemon
+;; emacsclient -e '(kill-emacs)'
+
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html
 (require 'package)
 (add-to-list 'package-archives
@@ -180,10 +183,6 @@
 ;; (setq ess-use-auto-complete t)
 
 ;; END config ESS
-
-;; to avoid issues with polymode:
-;; https://github.com/vspinu/polymode/issues/147
-(global-set-key (kbd "C-c =") " <- ")
 
 ;; https://emacs.stackexchange.com/a/27419
 (defun rmd-insert-chunk (header)
@@ -364,6 +363,9 @@
 (add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
+
+;; https://github.com/vspinu/polymode/issues/147
+(global-set-key (kbd "C-c =") " <- ")
 
 ;; END config polymode
 
