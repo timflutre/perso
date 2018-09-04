@@ -6,7 +6,7 @@
 # Inspiration: http://www.tecmint.com/sshfs-mount-remote-linux-filesystem-directory-using-ssh/
 
 if [ ! $# -eq 2 ]; then
-  echo -e "usage: remote.bash <server> <task>\n\tserver: cc2\n\ttask: mount/umount" 1>&2
+  echo -e "usage: remote.bash <server> <task>\n\tserver: cc2\n\ttask: mount/umount\n\nif device busy, use 'umount -l'" 1>&2
   exit 1
 fi
 
