@@ -179,6 +179,10 @@
             (cons "author" "Timothee Flutre")
             (cons "export" "")))
 
+;; https://github.com/emacs-ess/ESS/issues/760
+(define-key ess-mode-map (kbd "_") 'ess-insert-assign)
+(define-key inferior-ess-mode-map (kbd "_") 'ess-insert-assign)
+
 ;; http://www.emacswiki.org/emacs/ESSAuto-complete
 ;; (setq ess-use-auto-complete t)
 
@@ -358,14 +362,19 @@
 ;;----------------------------------------------------------------------------
 
 ;;;; START config polymode
-;; https://github.com/vspinu/polymode
+;; https://github.com/polymode/polymode
+
+(require 'poly-R)
+(require 'poly-markdown)
 
 (add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 (add-to-list 'auto-mode-alist '("\\.Rnw" . poly-noweb+r-mode))
 
-;; https://github.com/vspinu/polymode/issues/147
-(global-set-key (kbd "C-c =") " <- ")
+;; "M-n v v": eval all inner chunks in a region if region is active or the current chunk at point
+;; "M-n v b": eval all inner chunks in a buffer
+;; "M-n v u": eval from beginning of buffer till point
+;; "M-n v d": eval from point till end of buffer
 
 ;; END config polymode
 
