@@ -93,6 +93,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
 * install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)
+* install latest `R`: see [here](https://cran.r-project.org/bin/linux/ubuntu/README)
 * turn off `gnome-keyring` ([source](https://stackoverflow.com/a/25465155/597069)): `sudo chmod -x /usr/bin/gnome-keyring-daemon`
 * install latest LibreOffice: [download](http://www.libreoffice.org/download), `tar -xzvf`, `sudo dpkg -i *.deb`
 * set up a virtual machine with VirtualBox:
