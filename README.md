@@ -11,7 +11,8 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, ess, markdown-mode and polymode
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
-  - with [extensions](https://addons.mozilla.org/en-US/firefox/) Adblock Plus, Tab Mix Plus and Markdown Viewer
+  - with [extensions](https://addons.mozilla.org/en-US/firefox/) uBlock Origin, Open Tabs Next to Current, DuckDuckGo Privacy Essentials
+  - with proxy INRA `http://revelec.inra.fr/revelec.pac` (Préférences > Paramètres réseau >  Adresse de configuration automatique du proxy)
   - take whole-page screenshot: Settings > Web development > Development tools > Tool options > Take a screenshot of the whole page
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
   - in Calc, turn off `AutoInput` in `Tools`
