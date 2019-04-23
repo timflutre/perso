@@ -28,7 +28,7 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   module load system/boost/1_58_0
   module load mpi/openmpi/1.6.5
   # module load bioinfo/ARCAD/1
-  module load bioinfo/bcftools/1.8
+  module load bioinfo/bcftools/1.9
   module load bioinfo/beagle/4.1
   # module load bioinfo/beagle-lib/20150321
   module load bioinfo/bedtools/2.24.0
