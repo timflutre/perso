@@ -1,29 +1,41 @@
 #!/usr/bin/env bash
 
-rm -r fake_home; mkdir -p fake_home
+cd ~/tmp
+rm -rf test_rsync_TM; mkdir -p test_rsync_TM
+cd test_rsync_TM
+
+rm -rf fake_home; mkdir -p fake_home
 echo "a" > fake_home/dat1
 echo "a" > fake_home/dat2
 
-rm -r backup; mkdir -p backup
-mkdir -p backup/bkp_latest
+rm -rf fake_backup; mkdir -p fake_backup
+mkdir -p fake_backup/bkp_latest
 
-~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/backup -p bkp_latest -c bkp1 -e ""
+~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/fake_backup -p bkp_latest -c bkp1 -e ""
 
 # no change to dat1
 echo "b" >> fake_home/dat2
 
-~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/backup -p bkp_latest -c bkp2 -e ""
+~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/fake_backup -p bkp_latest -c bkp2 -e ""
 
 # no change to dat1
 echo "c" >> fake_home/dat2
 echo "a" > fake_home/dat3
 
-~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/backup -p bkp_latest -c bkp3 -e ""
+~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/fake_backup -p bkp_latest -c bkp3 -e ""
 
-du -hs backup/*
+du -hs fake_backup/*
 
-rm -r backup/bkp1
-rm -r backup/bkp2
+rm -r fake_backup/bkp1
+rm -r fake_backup/bkp2
+
+# test with .git
+mkdir fake_home/mypkg
+echo "a" > fake_home/mypkg/code.sh
+mkdir fake_home/mypkg/.git
+echo "a" > fake_home/mypkg/.git/config
+
+~/src/perso/time_machine -s ~/tmp/test_rsync_TM/fake_home -t ~/tmp/test_rsync_TM/fake_backup -p bkp_latest -c bkp4 -e ""
 
 
 

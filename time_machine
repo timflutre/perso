@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Aim: use rsync to mimick Apple's Time Machine
-# Copyright (C) 2017 Timothée Flutre
+# Copyright (C) 2017,2019 Timothée Flutre
 # License: GPL-3+
 # Person: Timothée Flutre [cre,aut]
 # Versioning: https://github.com/timflutre/perso
 # Inspiration: https://blog.interlinked.org/tutorials/rsync_time_machine.html
 
-progVersion="0.2.0" # http://semver.org/
+progVersion="0.2.1" # http://semver.org/
 
 # Display the help on stdout.
 # The format complies with help2man (http://www.gnu.org/s/help2man)
@@ -46,7 +46,7 @@ function help () {
 function version () {
   msg="${0##*/} ${progVersion}\n"
   msg+="\n"
-  msg+="Copyright (C) 2017 Timothée Flutre.\n"
+  msg+="Copyright (C) 2017,2019 Timothée Flutre.\n"
   msg+="License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n"
   msg+="\n"
   msg+="Written by Timothée Flutre [cre,aut]."
@@ -155,7 +155,8 @@ function run () {
     fi
   fi
   
-  RSYNC_ARGS="-axzChP"
+  RSYNC_ARGS="-axzhP"
+  RSYNC_ARGS+="C --include '.git'"
   RSYNC_ARGS+=" --stats"
   RSYNC_ARGS+=" --delete"
   RSYNC_ARGS+=" --delete-excluded"
@@ -164,6 +165,7 @@ function run () {
     RSYNC_ARGS+=" --exclude-from=${excludeFile}"
   fi
   RSYNC_ARGS+=" --link-dest=${targetDir}/${previousBackup}"
+  # RSYNC_ARGS+=" --list-only" # to debug
   
   RSYNC_CMD="rsync"
   RSYNC_CMD+=" ${RSYNC_ARGS}"
