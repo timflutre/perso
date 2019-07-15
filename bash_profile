@@ -8,6 +8,13 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # Machine specific environment (define COMPUTERNAME in .bashrc)
+if [ "$COMPUTERNAME" == "portdeap2" ]; then
+  # attempt at using Guix:
+  export GUIX_PROFILE="$HOME/.guix-profile"
+  # . ${GUIX_PROFILE}"/etc/profile"
+  # export GUIX_LOCPATH=${GUIX_PROFILE}"/lib/locale"
+  # export LC_ALL=en_US.UTF-8
+fi
 if [ "$COMPUTERNAME" == "laptop-pro" ]; then
   PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH
   MANPATH=/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH
@@ -100,3 +107,11 @@ export PYTHONPATH=$HOME/lib/python2.7/site-packages/:$PYTHONPATH
 export MANPATH=$HOME/share/man:$MANPATH
 export INFOPATH=$INFOPATH
 # see .Renviron for R_LIBS_USER
+
+# Local Variables:
+# mode: Shell-script
+# coding: utf-8-unix
+# tab-width: 2
+# sh-basic-offset: 2
+# sh-indentation: 2
+# End:

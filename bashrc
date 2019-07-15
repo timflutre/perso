@@ -15,9 +15,10 @@ export CPPFLAGS="$CPPFLAGS -I$HOME/include"
 export CXXFLAGS="$CXXFLAGS -I$HOME/include"
 export LDFLAGS="$LDFLAGS -L$HOME/lib"
 
-# User specific aliases and functions
-alias ls='ls -F'
-alias ll='ls -l'
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # need to set PS1 here so that emacs term-mode can have it
 # https://www.digitalocean.com/community/tutorials/how-to-customize-your-bash-prompt-on-a-linux-vps
