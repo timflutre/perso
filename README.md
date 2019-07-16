@@ -89,6 +89,8 @@ As such, some files have a license (GPL) whereas others are simply in the public
 10. install the latest `R` version, and set up `.Renviron` and `.Rprofile`
   - on old computer: `x <- list.files(.libPaths()[1]); save(x, file="~/Rpkgs.RData")`
   - on new computer: `load("~/Rpkgs.RData"); for(i in seq_along(x)){message(paste(i,x[i])); if(! x[i] %in% installed.packages())install.packages(x[i])}`
+  - for Bioconductor: ``w <- warnings(); pkgs <- sapply(substring(sapply(strsplit(names(y), " "), `[`, 2), 2), function(tmp){substring(tmp, 1, nchar(tmp)-1)}); BiocManager::install(pkgs)``
+  - deal with the other packages manually (e.g., INLA)
 11. copy all my files from a backup (e.g., `mkdir src; cp -rvT /media/tflutre/tflutre-backup/backup_agap-flutre_latest/src ~/src`)
 
 
