@@ -1,4 +1,9 @@
-<!-- pandoc README.md -f commonmark -t html -s -o README.html -->
+---
+title: Personal sysadmin
+---
+
+<!-- pandoc README.md -t html -s -o README.html --toc -->
+
 
 This repository contains the files I need on most (all?) of my computers, whether they are for work or personal usage.
 I provide these files without any warranty, more for me (as a backup), yet they can be useful to others.
@@ -81,7 +86,9 @@ As such, some files have a license (GPL) whereas others are simply in the public
 7. clone my git repositories from GitHub (starting with [perso](https://github.com/timflutre/perso))
 8. set up `.bashrc`, `.bash_profile`, `.bash_aliases`, `.emacs`
 9. install the Dropbox client
-10. install the latest `R` version ([help](https://cran.r-project.org/bin/linux/ubuntu/README), see also `install_custom_R.sh`), and set up `.Renviron` and `.Rprofile`
+10. install the latest `R` version, and set up `.Renviron` and `.Rprofile`
+  - on old computer: `x <- list.files(.libPaths()[1]); save(x, file="~/Rpkgs.RData")`
+  - on new computer: `load("~/Rpkgs.RData"); for(i in seq_along(x)){message(paste(i,x[i])); if(! x[i] %in% installed.packages())install.packages(x[i])}`
 11. copy all my files from a backup (e.g., `mkdir src; cp -rvT /media/tflutre/tflutre-backup/backup_agap-flutre_latest/src ~/src`)
 
 
@@ -95,9 +102,9 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
 * install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)
-* install latest `R`: see [here](https://cran.r-project.org/bin/linux/ubuntu/README)
+* install latest `R`: see `install_custom_R.sh`, also see [this](https://cran.r-project.org/bin/linux/ubuntu/README)
 * turn off `gnome-keyring` ([source](https://stackoverflow.com/a/25465155/597069)): `sudo chmod -x /usr/bin/gnome-keyring-daemon`
-* install latest LibreOffice: [download](http://www.libreoffice.org/download), `tar -xzvf`, `sudo dpkg -i *.deb` (or see [here](https://doc.ubuntu-fr.org/libreoffice))
+* install latest LibreOffice: [download](http://www.libreoffice.org/download), `tar -xzvf`, `sudo dpkg -i *.deb` (also see [this](https://doc.ubuntu-fr.org/libreoffice))
 * set up a virtual machine with VirtualBox:
   1. `sudo apt-get install virtualbox`
   2. `mkdir -p ~/vima` (allow to exclude it easily from backup via `rsync`)
