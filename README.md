@@ -37,9 +37,9 @@ As such, some files have a license (GPL) whereas others are simply in the public
     - Base directory = ~/Documents/travail/biblio_zotero
     - Data directory location = Use profile directory
   - Zotfile preferences > General Settings
-    - Source folder for attaching new files: select "Use Firefox download folder"
+    - Source folder for attaching new files: `/home/tflutre/Téléchargements`
     - unselect "Watch for new files in source folder"
-    - Location of files: Custom location = same as Zotero base directory
+    - Location of files: Custom location = `/home/tflutre/Documents/travail/biblio_zotero`
   - Zotfile preferences > Renaming Rules
     - unselect "Use Zotero to rename"
     - format = {%F_}{%y_}{%t}
@@ -53,6 +53,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
     - Automatically rename new attachments = "Always rename"
     - unselect everything
   - Preferences > Sync: enter id and password, then click on Sync with Zotero Server
+  - to add an article, start by adding its DOI, then save the pdf somewhere and click on "Ajouter une pièce jointe" > "Joindre une copie enregistrée d'un fichier..."
 - statistical computing: [R](https://en.wikipedia.org/wiki/R_(programming_language))
   - with [packages](https://cran.r-project.org/web/packages/) Matrix, data.table, Rcpp, devtools, testthat, among others
 - hypervisor / hyperviseur: [VirtualBox](https://en.wikipedia.org/wiki/VirtualBox)
