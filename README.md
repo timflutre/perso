@@ -21,6 +21,9 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - take whole-page screenshot: Settings > Web development > Development tools > Tool options > Take a screenshot of the whole page
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
   - in Calc, turn off `AutoInput` in `Tools`
+- PDF editor / éditeur de PDF: [qpdf](https://en.wikipedia.org/wiki/QPDF)
+  - extract pages: `qpdf --pages input.pdf 2-7 -- input.pdf output.pdf`
+  - concatenate whole files: `qpdf --empty output.pdf --pages file1.pdf file2.pdf file3.pdf --`
 - PDF editor / éditeur de PDF: [PDFtk](https://en.wikipedia.org/wiki/PDFtk)
   - extract pages: `pdftk input.pdf cat 2-7 output output.pdf`
 - media metadata editor / éditeur de méta-données de médias: [ExifTool](https://en.wikipedia.org/wiki/ExifTool)
