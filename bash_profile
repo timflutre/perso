@@ -9,6 +9,8 @@ fi
 
 # Machine specific environment (define COMPUTERNAME in .bashrc)
 if [ "$COMPUTERNAME" == "portdeap2" ]; then
+  PATH=$HOME/.local/bin:$PATH
+
   # attempt at using Guix:
   export GUIX_PROFILE="$HOME/.guix-profile"
   # . ${GUIX_PROFILE}"/etc/profile"
