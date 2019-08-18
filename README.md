@@ -21,11 +21,14 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - take whole-page screenshot: Settings > Web development > Development tools > Tool options > Take a screenshot of the whole page
 - office suite / suite bureautique: [LibreOffice](https://en.wikipedia.org/wiki/LibreOffice)
   - in Calc, turn off `AutoInput` in `Tools`
-- PDF editor / éditeur de PDF: [qpdf](https://en.wikipedia.org/wiki/QPDF)
-  - extract pages: `qpdf --pages input.pdf 2-7 -- input.pdf output.pdf`
-  - concatenate whole files: `qpdf --empty output.pdf --pages file1.pdf file2.pdf file3.pdf --`
-- PDF editor / éditeur de PDF: [PDFtk](https://en.wikipedia.org/wiki/PDFtk)
-  - extract pages: `pdftk input.pdf cat 2-7 output output.pdf`
+- PDF editor / éditeur de PDF:
+  - [qpdf](https://en.wikipedia.org/wiki/QPDF)
+    - extract pages: `qpdf --pages input.pdf 2-7 -- input.pdf output.pdf`
+    - concatenate whole files: `qpdf --empty output.pdf --pages file1.pdf file2.pdf file3.pdf --`
+  - [PDFtk](https://en.wikipedia.org/wiki/PDFtk)
+    - extract pages: `pdftk input.pdf cat 2-7 output output.pdf`
+  - [ghostscript](https://ghostscript.com/)
+    - compress file: `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
 - media metadata editor / éditeur de méta-données de médias: [ExifTool](https://en.wikipedia.org/wiki/ExifTool)
   - rename photos: `exiftool '-filename<CreateDate' -d %Y-%m-%d_%H%M%S%%-c.%%le -r -ext jpg *`
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
@@ -61,10 +64,14 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - with [packages](https://cran.r-project.org/web/packages/) Matrix, data.table, Rcpp, devtools, testthat, among others
 - hypervisor / hyperviseur: [VirtualBox](https://en.wikipedia.org/wiki/VirtualBox)
 - screenshot / capture d'écran: [Shutter](http://shutter-project.org/)
-- image editor / éditeur d'images: [GIMP](https://en.wikipedia.org/wiki/GIMP)
-- image editor / éditeur d'images: [Inkscape](https://en.wikipedia.org/wiki/Inkscape)
-- audio player / lecteur audio: [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox)
-- audio player / lecteur audio: [Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software))
+- image editor / éditeur d'images:
+  - [GIMP](https://en.wikipedia.org/wiki/GIMP)
+  - [Inkscape](https://en.wikipedia.org/wiki/Inkscape)
+  - [ImageMagick](https://imagemagick.org/)
+    - reduce file size: `mogrify -resize 50% *.jpg`
+- audio player / lecteur audio:
+  - [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox)
+  - [Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software))
 - audio tagging / éditeur de balises musicales: [Picard](https://en.wikipedia.org/wiki/MusicBrainz_Picard)
 - CD ripping / extracteur de musique: [Sound Juicer](https://wiki.gnome.org/Apps/SoundJuicer)
 - CD burning / graveur de CD: [Xfburn](http://goodies.xfce.org/projects/applications/xfburn)
