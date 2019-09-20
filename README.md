@@ -76,6 +76,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 - CD ripping / extracteur de musique: [Sound Juicer](https://wiki.gnome.org/Apps/SoundJuicer)
 - CD burning / graveur de CD: [Xfburn](http://goodies.xfce.org/projects/applications/xfburn)
 - video player / lecteur de vidéos: [VLC](https://en.wikipedia.org/wiki/VLC_media_player)
+- instant messaging / messagerie instantanée: [Empathy](https://wiki.gnome.org/Apps/Empathy)
 - podcast: [gPodder](http://gpodder.org/)
 - genealogy / généalogie: [Gramps](https://en.wikipedia.org/wiki/Gramps)
 - encryption / cryptage: [GnuPG](https://en.wikipedia.org/wiki/GNU_Privacy_Guard)
