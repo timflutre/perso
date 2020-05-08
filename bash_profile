@@ -11,6 +11,8 @@ fi
 if [ "$COMPUTERNAME" == "portdeap2" ]; then
   PATH=$HOME/.local/bin:$PATH
 
+  PYTHONPATH=/home/tflutre/miniconda2
+
   # attempt at using Guix:
   export GUIX_PROFILE="$HOME/.guix-profile"
   # . ${GUIX_PROFILE}"/etc/profile"
@@ -72,6 +74,8 @@ if [ "$COMPUTERNAME" == "southgreen" ]; then
   export GIT_SSL_NO_VERIFY=true
   
   PATH=/usr/local/jdk/bin:/usr/local/jre/bin:/homedir/flutre/texlive/bin/x86_64-linux:$PATH
+
+  PYTHONPATH=$HOME/lib/python2.7/site-packages
   
   MANPATH=/home/flutre/texlive/texmf-dist/doc/man:$MANPATH
   INFOPATH=/home/flutre/texlive/texmf-dist/doc/info:$INFOPATH
@@ -105,7 +109,7 @@ if [ "$COMPUTERNAME" == "midway" ]; then
 fi
 
 export PATH=$HOME/bin:$PATH
-export PYTHONPATH=$HOME/lib/python2.7/site-packages/:$PYTHONPATH
+export PYTHONPATH=$PYTHONPATH
 export MANPATH=$HOME/share/man:$MANPATH
 export INFOPATH=$INFOPATH
 # see .Renviron for R_LIBS_USER
