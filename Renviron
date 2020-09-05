@@ -3,3 +3,6 @@
 
 # to know more about this file, open R and do help(Startup)
 R_LIBS_USER=~/lib/R/%p-library/%v
+
+# https://cran.r-project.org/package=rentrez
+ENTREZ_KEY="17b3ef1329ab76e1b9c465e0a619a4bae209"
