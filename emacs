@@ -24,7 +24,10 @@
       '(
         auctex
         auto-complete
+        elpy
+        ein
         ess
+        jupyter
         markdown-mode
         polymode
         xclip
@@ -42,6 +45,8 @@
  '(display-time-day-and-date t)
  '(display-time-mode 1)
  '(global-font-lock-mode t nil (font-lock))
+ '(python-shell-interpreter "python3")
+ '(safe-local-variable-values (quote ((TeX-master . t))))
  '(size-indication-mode t))
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
