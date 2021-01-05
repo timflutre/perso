@@ -20,7 +20,7 @@ R_VERSION=$1
 
 if [ -f /usr/bin/R-${R_VERSION} -a -f /usr/bin/Rscript-${R_VERSION} ]; then
   
-  echo The R-${R_VERSION} executable, and Rscript, are already available as /usr/bin/R-${R_VERSION} and /usr/bin/Rscript-${R_VERSION}.
+  echo The R and Rscript for version ${R_VERSION} are already available, as /usr/bin/R-${R_VERSION} and /usr/bin/Rscript-${R_VERSION}.
   
 else
   
@@ -30,7 +30,8 @@ else
   
   if [ ! -f R-${R_VERSION}.tar.gz ]; then 
     echo "Download and extract R source..."
-    wget https://cran.r-project.org/src/base/R-3/R-${R_VERSION}.tar.gz
+    R_VERSION_MAIN=$(echo $R_VERSION | awk '{split($0,a,"."); printf a[1]}')
+    wget https://cran.r-project.org/src/base/R-${R_VERSION_MAIN}/R-${R_VERSION}.tar.gz
     tar xvzf R-${R_VERSION}.tar.gz
     # rm -f R-${R_VERSION}.tar.gz
   fi
