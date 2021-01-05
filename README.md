@@ -13,7 +13,9 @@ As such, some files have a license (GPL) whereas others are simply in the public
 # List of free softwares I find useful
 
 - text editor / éditeur de texte: [Emacs](https://en.wikipedia.org/wiki/Emacs)
-  - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, ess, markdown-mode and polymode
+  - with [packages](https://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html) auctex, auto-complete, elpy, ess, markdown-mode, polymode, xclip
+  - useful tips:
+    `emacs --daemon`, `emacsclient -t -nw`, `emacsclient -e "(kill-emacs)"`
 - version control / gestion de versions: [Git](https://en.wikipedia.org/wiki/Git)
 - internet browser / navigateur internet: [Firefox](https://en.wikipedia.org/wiki/Firefox)
   - with [extensions](https://addons.mozilla.org/en-US/firefox/) uBlock Origin, Open Tabs Next to Current, DuckDuckGo Privacy Essentials
