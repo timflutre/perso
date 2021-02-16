@@ -63,6 +63,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - to add an article, start by adding its DOI, then save the pdf somewhere and click on "Ajouter une pièce jointe" > "Joindre une copie enregistrée d'un fichier..."
 - statistical computing: [R](https://en.wikipedia.org/wiki/R_(programming_language))
   - with [packages](https://cran.r-project.org/web/packages/) Matrix, data.table, Rcpp, devtools, testthat, among others
+- computing: [Julia](https://en.wikipedia.org/wiki/Julia_(programming_language))
 - hypervisor / hyperviseur: [VirtualBox](https://en.wikipedia.org/wiki/VirtualBox)
 - screenshot / capture d'écran: [Shutter](http://shutter-project.org/)
 - image editor / éditeur d'images:
@@ -118,6 +119,12 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
 * install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)
 * install latest `R`: see `install_custom_R.sh`, also see [this](https://cran.r-project.org/bin/linux/ubuntu/README)
+* install latest `Julia`: see [these](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) commands
+  1. `mkdir -p ~/src_ext; cd ~/src_ext`
+  2. `wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.2-linux-x86_64.tar.gz`
+  3. `tar -xvzf julia-1.5.2-linux-x86_64.tar.gz`
+  4. `sudo cp -r julia-1.5.2 /opt/` (see [why](https://askubuntu.com/questions/34880/use-of-opt-and-usr-local-directories-in-the-context-of-a-pc/34922#34922))
+  5. `sudo ln -s /opt/julia-1.5.2/bin/julia /usr/local/bin/julia`
 * turn off `gnome-keyring` ([source](https://stackoverflow.com/a/25465155/597069)): `sudo chmod -x /usr/bin/gnome-keyring-daemon`
 * install latest LibreOffice: [download](http://www.libreoffice.org/download), `tar -xzvf`, `sudo dpkg -i *.deb` (also see [this](https://doc.ubuntu-fr.org/libreoffice))
 * set up a virtual machine with VirtualBox:
