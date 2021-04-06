@@ -38,7 +38,7 @@ else
   
   echo "Configure and make..."
   cd R-${R_VERSION}
-  ./configure --prefix=/usr/local/R/${R_VERSION} --enable-R-shlib --with-cairo
+  ./configure --prefix=/usr/local/R/${R_VERSION} --enable-R-shlib --with-cairo --with-tcltk
   make
   sudo make install
   
