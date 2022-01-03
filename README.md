@@ -136,3 +136,24 @@ As such, some files have a license (GPL) whereas others are simply in the public
   6. `mkdir -p ~/vima/shared_dir`
   7. install extension pack
 * [cheatsheet](https://www.computerhope.com/issues/chusedos.htm) to use Windows command line (DOS)
+
+
+# Useful tutorials
+
+## LaTeX
+
+* https://karthinks.com/software/latex-input-for-impatient-scholars/
+
+## Git
+
+* https://git-scm.com/book/en/v2
+
+* https://githowto.com/
+
+## Emacs
+
+* https://www.gnu.org/software/emacs/tour/
+
+* https://www.tuteurs.ens.fr/unix/editeurs/emacs.html
+
+* https://polymode.github.io/
