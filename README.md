@@ -117,6 +117,10 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * check network interfaces: `ifconfig -a`
 * scan wifi networks: `sudo iwlist wlan0 scan`
 * diagnose wireless connection: see [this script](https://github.com/UbuntuForums/wireless-info)
+* set up SSH:
+  * on all computers: `cat .ssh/config` (which returns `ForwardAgent yes`)
+  * copy public key: `scp ~/.ssh/id_rsa.pub login@hostname:~/.ssh`
+  * use the agent: `` eval `ssh-agent` `` and then `ssh-add`
 * install latest `emacs`: see this [PPA](https://launchpad.net/%7Ekelleyk/+archive/ubuntu/emacs)
 * install latest `R`: see `install_custom_R.sh`, also see [this](https://cran.r-project.org/bin/linux/ubuntu/README)
 * install latest `Julia`: see [these](https://ferrolho.github.io/blog/2019-01-26/how-to-install-julia-on-ubuntu) commands
