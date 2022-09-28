@@ -4,3 +4,4 @@
 Sys.setenv(LANGUAGE="en")
 
 options(repos=c(CRAN="https://cloud.r-project.org/"))
+options(browser="/snap/bin/firefox")
