@@ -10,8 +10,12 @@ fi
 # Machine specific environment (define COMPUTERNAME in .bashrc)
 if [ "$COMPUTERNAME" == "portdeap2" ]; then
   PATH=$HOME/.local/bin:$PATH
+  # PATH=$HOME/src_ext/julia/julia-1.5.2/bin:$PATH
 
-  PYTHONPATH=/home/tflutre/miniconda2
+  # PYTHONPATH=$HOME/.local/lib/python3.6/site-packages
+  # PYTHONPATH=/home/tflutre/miniconda2
+
+  export JULIA_NUM_THREADS=`nproc`
 
   # attempt at using Guix:
   export GUIX_PROFILE="$HOME/.guix-profile"
