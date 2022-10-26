@@ -14,6 +14,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
@@ -27,6 +29,7 @@
         elpy
         ein
         ess
+        ;; julia-mode ;; use ESS instead, conflict with both
         jupyter
         markdown-mode
         polymode
@@ -149,6 +152,8 @@
 ;; or use the version from M-x list-packages:
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/ess-20180109.1719/lisp/")
 (require 'ess-site)
+
+(add-to-list 'auto-mode-alist '("\\.jl" . ess-julia-mode))
 
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
@@ -400,3 +405,21 @@
                 (font-lock-mode 1))))
 
 ;; END config octave-mode
+
+;;----------------------------------------------------------------------------
+
+;;;; START config elpy
+
+(elpy-enable)
+
+;; END config elpy
+
+;;----------------------------------------------------------------------------
+
+;;;; START config julia-mode
+
+;; use ESS instead (M-x ess-julia-mode), conflict with both
+
+;; (require 'julia-mode)
+
+;;;; END config julia-mode
