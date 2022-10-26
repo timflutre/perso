@@ -15,7 +15,7 @@ if [ "$COMPUTERNAME" == "portdeap2" ]; then
   # PYTHONPATH=$HOME/.local/lib/python3.6/site-packages
   # PYTHONPATH=/home/tflutre/miniconda2
 
-  export JULIA_NUM_THREADS=`nproc`
+  export JULIA_NUM_THREADS=$((`nproc` - 1))
 
   # attempt at using Guix:
   export GUIX_PROFILE="$HOME/.guix-profile"
