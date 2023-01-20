@@ -14,3 +14,11 @@ Host sourcesup
      HostName git.renater.fr
      User git
      IdentityFile ~/.ssh/id_rsa_pro
+
+Host git-moulon
+     HostName git.moulon.inra.fr
+     User git
+     IdentityFile ~/.ssh/id_rsa_pro
+
+Host neo
+     ProxyJump tflutre@moulon.inrae.fr
