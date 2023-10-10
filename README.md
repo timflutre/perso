@@ -30,6 +30,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
     - extract pages: `pdftk input.pdf cat 2-7 output output.pdf`
   - [ghostscript](https://ghostscript.com/)
     - compress file: `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
+  - [Xournal++](https://xournalpp.github.io/)
 - media metadata editor / éditeur de méta-données de médias: [ExifTool](https://en.wikipedia.org/wiki/ExifTool)
   - rename photos: `exiftool '-filename<CreateDate' -d %Y-%m-%d_%H%M%S%%-c.%%le -r -ext jpg *`
 - markup converter / convertisseur de documents: [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
