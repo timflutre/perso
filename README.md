@@ -143,6 +143,11 @@ As such, some files have a license (GPL) whereas others are simply in the public
   6. `mkdir -p ~/vima/shared_dir`
   7. install extension pack
 * [cheatsheet](https://www.computerhope.com/issues/chusedos.htm) to use Windows command line (DOS)
+* limit the recharging of the battery: to the interval 50-60%
+  - `sudo apt-get install smbios-utils`
+  - `sudo smbios-battery-ctl --get-charging-cfg`
+  - `sudo smbios-battery-ctl --set-custom-charge-interval 50 60`
+  - `sudo smbios-battery-ctl --set-charging-mode=custom`
 
 
 # Useful tutorials
