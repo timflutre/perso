@@ -148,6 +148,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - `sudo smbios-battery-ctl --get-charging-cfg`
   - `sudo smbios-battery-ctl --set-custom-charge-interval 50 60`
   - `sudo smbios-battery-ctl --set-charging-mode=custom`
+* in Microsoft OWA, get all emails between two dates: `received:1/1/2015..12/31/2015`
 
 
 # Useful tutorials
