@@ -4,5 +4,11 @@
 # to know more about this file, open R and do help(Startup)
 R_LIBS_USER=~/lib/R/%p-library/%v
 
+# to use, e.g., for browseVignettes()
+R_BROWSER=/usr/bin/firefox
+
+# https://github.com/SticsRPacks/SticsRPacks
+javastics_path="/home/tflutre/Documents/travail/src_ext/STICS/JavaSTICS-1.5.2-STICS-10.1.0"
+
 # https://cran.r-project.org/package=rentrez
 ENTREZ_KEY="17b3ef1329ab76e1b9c465e0a619a4bae209"
