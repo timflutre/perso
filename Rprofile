@@ -4,4 +4,9 @@
 Sys.setenv(LANGUAGE="en")
 
 options(repos=c(CRAN="https://cloud.r-project.org/"))
-options(browser="/snap/bin/firefox")
+local({
+  r <- getOption("repos")
+  if (is.null(r)) r["CRAN"] <- "https://cloud.r-project.org/"
+  r["breedR"] <- "https://famuvie.github.io/breedR"
+  options(repos = r)
+})
