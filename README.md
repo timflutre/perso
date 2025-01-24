@@ -75,6 +75,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - [Inkscape](https://en.wikipedia.org/wiki/Inkscape)
   - [ImageMagick](https://imagemagick.org/)
     - reduce file size: `mogrify -resize 50% *.jpg`
+- photo manager / gestionnaire de photos: [Tropy](https://tropy.org/)
 - audio player / lecteur audio:
   - [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox)
   - [Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software))
