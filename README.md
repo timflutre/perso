@@ -43,28 +43,23 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - see my own '[time_machine](https://github.com/timflutre/perso/blob/master/time_machine)'
 - password manager / gestionnaire de mots de passe: [KeePassXC](https://en.wikipedia.org/wiki/KeePassXC)
 - reference manager / gestionnaire de références: [Zotero](https://en.wikipedia.org/wiki/Zotero)
-  - with [plugins](https://www.zotero.org/support/plugins) Zotfile and Better Bibtex
-  - Preferences > Advanced > Files and Folders:
-    - Base directory = ~/Documents/travail/biblio_zotero
-    - Data directory location = Use profile directory
-  - Zotfile preferences > General Settings
-    - Source folder for attaching new files: `/home/tflutre/Téléchargements`
-    - unselect "Watch for new files in source folder"
-    - Location of files: Custom location = `/home/tflutre/Documents/travail/biblio_zotero`
-  - Zotfile preferences > Renaming Rules
-    - unselect "Use Zotero to rename"
-    - format = {%F_}{%y_}{%t}
-    - unselect "Change to lower case"
-    - select "Replace blanks"
-    - select "Truncate title"
-    - max length = 80
-    - max nb authors = 1
-    - select "Add suffix when authors are omitted" = " et al"
-  - Zotfile preferences > Advanced settings
-    - Automatically rename new attachments = "Always rename"
-    - unselect everything
-  - Preferences > Sync: enter id and password, then click on Sync with Zotero Server
-  - to add an article, start by adding its DOI, then save the pdf somewhere and click on "Ajouter une pièce jointe" > "Joindre une copie enregistrée d'un fichier..."
+  - with [plugins](https://www.zotero.org/support/plugins) Better Bibtex
+  - Edition > Paramètres
+    - Général:
+      - Renommage des fichiers: décocher le renommage automatique
+      - Cliquer sur "Personnaliser le format" et copier-coller le modèle suivant:
+      ```
+      {{ if {{ authorsCount > 1 }} }}
+      {{ authors name="family-given" initialize="given" initialize-with="" name-part-separator="" suffix="et_al _" }}
+      {{ else }}
+      {{ authors name="family-given" initialize="given" initialize-with="" name-part-separator="" suffix="_" }}
+      {{ year suffix="_" }}
+      {{ title replaceFrom=" " replaceTo="_" regexOpts="g" truncate="80" }}
+      ```
+    - Avancé:
+      - Répertoire de base pour les pièces jointes liées = ~/Documents/travail/biblio_zotero
+      - Emplacement du répertoire de données = ~/Zotero
+  - **pour ajouter un article**: ajouter son DOI ce qui crée un nouveau document dans la bibliothèque de Zotero; sauver le pdf dans le répertoire de base; cliquer droit sur l'item ajouté, choisir "Ajouter une pièce jointe" puis "Fichier lié" et sélectionner le pdf en question; cliquer droit sur l'item pièce jointe dans Zotero et choisir "Renomme le fichier" ce qui renomme le fichier dans Zotero mais aussi dans le répertoire de base
 - statistical computing: [R](https://en.wikipedia.org/wiki/R_(programming_language))
   - with [packages](https://cran.r-project.org/web/packages/) Matrix, data.table, Rcpp, devtools, testthat, among others
 - computing: [Julia](https://en.wikipedia.org/wiki/Julia_(programming_language))
