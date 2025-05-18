@@ -115,6 +115,7 @@ As such, some files have a license (GPL) whereas others are simply in the public
 * get info about memory: `free -ht`
 * get info about file system: `df -T`, then `sudo dumpe2fs /dev/sda6 | less`
 * get info about sound card: `alsamixer`
+* sort files per size: `du -sk * | sort -rn`
 * restart audio: `pulseaudio -k`
 * check network interfaces: `ifconfig -a`
 * scan wifi networks: `sudo iwlist wlan0 scan`
