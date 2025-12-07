@@ -9,7 +9,7 @@ fi
 
 # Machine specific environment (define COMPUTERNAME in .bashrc)
 if [ "$COMPUTERNAME" == "portdeap2" ]; then
-  PATH=$HOME/.local/bin:$PATH
+  PATH=$HOME/.local/bin:"/opt/tropy/tropy-1.17.2-x64/":$PATH
   # PATH=$HOME/src_ext/julia/julia-1.5.2/bin:$PATH
 
   # PYTHONPATH=$HOME/.local/lib/python3.6/site-packages
@@ -22,6 +22,9 @@ if [ "$COMPUTERNAME" == "portdeap2" ]; then
   # . ${GUIX_PROFILE}"/etc/profile"
   # export GUIX_LOCPATH=${GUIX_PROFILE}"/lib/locale"
   # export LC_ALL=en_US.UTF-8
+
+  # For Rust:
+  . "$HOME/.cargo/env"
 fi
 if [ "$COMPUTERNAME" == "laptop-pro" ]; then
   PATH=/usr/local/texlive/2014/bin/x86_64-linux:$PATH

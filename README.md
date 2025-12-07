@@ -71,6 +71,8 @@ As such, some files have a license (GPL) whereas others are simply in the public
   - [ImageMagick](https://imagemagick.org/)
     - reduce file size: `mogrify -resize 50% *.jpg`
 - photo manager / gestionnaire de photos: [Tropy](https://tropy.org/)
+  - Install: `sudo tar xjf tropy-1.17.2-x64.tar.bz2 -C /opt/tropy`
+  - Then, add the path to PATH in `.bash_profile`, and read their INSTALL file
 - audio player / lecteur audio:
   - [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox)
   - [Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software))
