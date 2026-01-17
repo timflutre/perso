@@ -117,6 +117,14 @@
 (require 'epa-file)
 (epa-file-enable)
 
+;; https://www.emacswiki.org/emacs/SavePlace
+(save-place-mode 1)
+
+;; Revert buffers when the underlying file has changed
+(global-auto-revert-mode 1)
+;; Revert Dired and other buffers
+(setq global-auto-revert-non-file-buffers t)
+
 ;; http://unix.stackexchange.com/a/186565/34919
 (defun term-new ()
   (interactive)
