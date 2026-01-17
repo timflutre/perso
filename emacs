@@ -33,6 +33,7 @@
         jupyter
         markdown-mode
         polymode
+        quarto-mode
         xclip
         ))
 
@@ -49,7 +50,7 @@
  '(display-time-mode 1)
  '(global-font-lock-mode t nil (font-lock))
  '(python-shell-interpreter "python3")
- '(safe-local-variable-values (quote ((TeX-master . t))))
+ '(safe-local-variable-values '((TeX-master . t)))
  '(size-indication-mode t))
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
@@ -157,7 +158,8 @@
 
 ;; tips from http://emacswiki.org/emacs/EmacsSpeaksStatistics
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
-(setq ess-ask-for-ess-directory nil) ;otherwise you are prompted each time you start an interactive R session
+;(setq ess-ask-for-ess-directory nil) ;otherwise you are prompted each time you start an interactive R session
+(setq ess-ask-for-ess-directory t) ;comment above line and see here: https://github.com/emacs-ess/ESS/issues/461
 
 ;; http://cran.r-project.org/doc/manuals/R-ints.html#R-coding-standards
 (add-hook 'ess-mode-hook
@@ -387,6 +389,15 @@
 ;; "M-n v d": eval from point till end of buffer
 
 ;; END config polymode
+
+;;----------------------------------------------------------------------------
+
+;;;; START config quarto-mode
+;; https://github.com/polymode/polymode
+
+(require 'quarto-mode)
+
+;; END config quarto-mode
 
 ;;----------------------------------------------------------------------------
 
